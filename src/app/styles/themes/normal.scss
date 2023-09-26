@@ -1,7 +1,11 @@
 .app.light  {
   --bg-color: #ffffff;
+  // противоположный цвет
+  --inverted-bg-color: #6262ff;
 
   --primary-color: #ff7715;
-
   --secondary-color: #d2ab3c;
+
+  --primary-color-link: #ff5a5a;
+  --secondary-color-link: #ffffff;
 }
