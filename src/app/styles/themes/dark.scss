@@ -1,12 +1,10 @@
 .app.dark {
-  --bg-color: #6262ff;
-  // противоположный цвет
-  --inverted-bg-color: #ffffff;
+    --bg-color: #6262ff;
 
-  --primary-color: #60ff60;
-
-  --secondary-color: #ffeb09;
-
-  --primary-color-link: #000000;
-  --secondary-color-link: #8b8b8e;
+    // противоположный цвет
+    --inverted-bg-color: #fff;
+    --primary-color: #60ff60;
+    --secondary-color: #ffeb09;
+    --primary-color-link: #000;
+    --secondary-color-link: #8b8b8e;
 }

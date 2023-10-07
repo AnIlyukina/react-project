@@ -1,5 +1,3 @@
-import {strict} from "assert";
-
 export type BuildMode = 'production' | 'development';
 
 export interface BuildPaths {
