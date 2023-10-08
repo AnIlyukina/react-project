@@ -33,6 +33,8 @@ module.exports = {
         'i18next'
     ],
     'rules': {
+        'react/react-in-jsx-scope': 'off',
+        '@typescript-eslint/ban-ts-comment': 'off',
         'indent': [
             'error',
             4
