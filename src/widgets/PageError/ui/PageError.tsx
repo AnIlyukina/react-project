@@ -1,12 +1,12 @@
 import {classNames} from 'shared/lib/classNames/classNames';
-import styles from './ErrorPage.module.scss';
+import styles from './PageError.module.scss';
 import {useTranslation} from 'react-i18next';
 import {AppButton} from 'shared/ui/AppButton/AppButton';
 
 interface ErrorPageProps {
     className?: string
 }
-export const ErrorPage = ({className}: ErrorPageProps) => {
+export const PageError = ({className}: ErrorPageProps) => {
 
     const { t } = useTranslation();
 

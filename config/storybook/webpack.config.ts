@@ -12,6 +12,22 @@ export default ({config}: {config: webpack.Configuration} ) => {
     };
     config.resolve.modules.push(paths.src);
     config.resolve.extensions.push('.ts', '.ts');
+
+    //svgLoader
+    config.module.rules = config.module.rules.map((rule: webpack.RuleSetRule) => {
+        if (/svg/.test(rule.test as string)) {
+            return {
+                ...rule, exclude: /\.svg$/i
+            };
+        }
+        return rule;
+    });
+
+    config.module.rules.push({
+        test: /\.svg$/,
+        use: ['@svgr/webpack'],
+    });
+    // cssLoader
     config.module.rules.push(buildCssLoaders(true));
     return config;
 };

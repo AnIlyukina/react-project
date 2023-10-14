@@ -1,12 +1,11 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type {Meta, StoryObj} from '@storybook/react';
 import {AppButton, ThemeButton} from './AppButton';
+import {ThemeDecorator} from 'shared/config/Decorator/ThemeDecorator';
+import {Theme} from 'app/providers/ThemePtovider';
 
 const meta = {
     title: 'shared/Button',
     component: AppButton,
-    parameters: {
-        layout: 'centered',
-    },
     tags: ['autodocs'],
     argTypes: {
     },
@@ -35,3 +34,11 @@ export const Outline: Story = {
         theme: ThemeButton.OUTLINE,
     },
 };
+
+export const OutlineDark: Story = {
+    args: {
+        children: 'Text',
+        theme: ThemeButton.OUTLINE,
+    },
+};
+OutlineDark.decorators = [ThemeDecorator(Theme.DARK)];
