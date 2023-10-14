@@ -8,7 +8,8 @@ module.exports = {
         'eslint:recommended',
         'plugin:@typescript-eslint/recommended',
         'plugin:react/recommended',
-        'plugin:i18next/recommended'
+        'plugin:i18next/recommended',
+        'plugin:storybook/recommended'
     ],
     'overrides': [
         {
@@ -16,8 +17,18 @@ module.exports = {
                 'node': true
             },
             'files': [
-                '.eslintrc.{js,cjs}'
+                '.eslintrc.{js,cjs}',
+                '**/src/**/*.test.{ts,tsx}',
+                '*.stories.@(ts|tsx|js|jsx|mjs|cjs)'
             ],
+            // отключить правило переводов в тестах
+            'rules': {
+                'i18next/no-literal-string': 'off',
+                // example of overriding a rule
+                'storybook/hierarchy-separator': 'error',
+                // example of disabling a rule
+                'storybook/default-exports': 'off',
+            },
             'parserOptions': {
                 'sourceType': 'script'
             }
@@ -33,6 +44,9 @@ module.exports = {
         'react',
         'i18next'
     ],
+    'globals': {
+        '__dirname': true
+    },
     'rules': {
         'react/react-in-jsx-scope': 'off',
         '@typescript-eslint/ban-ts-comment': 'off',
@@ -53,7 +67,10 @@ module.exports = {
             'always'
         ],
         'i18next/no-literal-string': [
-            'error', { markupOnly: true }
+            'error', {
+                markupOnly: true,
+                ignoreAttribute: ['data-testid']
+            },
         ]
     }
 };
