@@ -40,6 +40,7 @@ module.exports = {
         'sourceType': 'module'
     },
     'plugins': [
+        'react-hooks',
         '@typescript-eslint',
         'react',
         'i18next'
@@ -48,6 +49,8 @@ module.exports = {
         '__dirname': true
     },
     'rules': {
+        'react-hooks/rules-of-hooks': 'error',
+        'react-hooks/exhaustive-deps': 'error',
         'react/react-in-jsx-scope': 'off',
         '@typescript-eslint/ban-ts-comment': 'off',
         'indent': [
