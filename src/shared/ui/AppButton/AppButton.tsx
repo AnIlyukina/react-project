@@ -36,7 +36,7 @@ export const AppButton: FC<AppButtonProps> = (props: AppButtonProps) => {
         [styles[theme]]: true,
         [styles.square]: square,
         [styles[size]]: true
-    }
+    };
 
     return (
         <button

@@ -4,9 +4,9 @@ import React, {useState} from 'react';
 import {ThemeSwitcher} from 'shared/ui/ThemeSwitcher/ThemeSwitcher';
 import {LangSwitcher} from 'shared/ui/LangSwitcher/LangSwitcher';
 import {useTranslation} from 'react-i18next';
-import {AppButton, ButtonSize, ThemeButton} from "shared/ui/AppButton/AppButton";
-import {AppLink, AppLinkTheme} from "shared/ui/AppLink/AppLink";
-import {RoutePath} from "shared/config/routeConfig/routeConfig";
+import {AppButton, ButtonSize, ThemeButton} from 'shared/ui/AppButton/AppButton';
+import {AppLink, AppLinkTheme} from 'shared/ui/AppLink/AppLink';
+import {RoutePath} from 'shared/config/routeConfig/routeConfig';
 import AboutIcon from 'shared/assets/icon/about-page.svg';
 import MainIcon from 'shared/assets/icon/home-page.svg';
 
@@ -47,7 +47,7 @@ export const Sidebar = ({ className }: SidebarProps) => {
                     >
                         <MainIcon className={styles.icon}/>
                         <span className={styles.link}>
-                             { t('Главная') }
+                            { t('Главная') }
                         </span>
                     </AppLink>
                 </div>
