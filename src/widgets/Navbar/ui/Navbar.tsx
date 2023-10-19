@@ -2,7 +2,7 @@ import React, {useCallback, useState } from 'react';
 import {classNames} from 'shared/lib/classNames/classNames';
 import styles from './Navbar.module.scss';
 import {useTranslation} from 'react-i18next';
-import {Modal} from 'shared/ui/Modal/Modal';
+import { LoginModal } from 'features/AuthByUsername';
 import {AppButton, ThemeButton} from 'shared/ui/AppButton/AppButton';
 
 interface NavbarProps {
@@ -13,8 +13,12 @@ export const Navbar = ({className}: NavbarProps) => {
 
     const [isAuthModal, setIsAuthModal] = useState(false);
 
-    const onToggleModal = useCallback(() => {
-        setIsAuthModal((prev) => !prev);
+    const onCloseModal = useCallback(() => {
+        setIsAuthModal(false);
+    }, []);
+
+    const onShowModal = useCallback(() => {
+        setIsAuthModal(true);
     }, []);
 
     return (
@@ -22,14 +26,14 @@ export const Navbar = ({className}: NavbarProps) => {
             <AppButton
                 theme={ThemeButton.CLEAR}
                 className={styles.links}
-                onClick={onToggleModal}
+                onClick={onShowModal}
             >
                 {t('Войти')}
             </AppButton>
 
-            <Modal
+            <LoginModal
                 isOpen={isAuthModal}
-                onClose={onToggleModal}
+                onClose={onCloseModal}
             />
         </div>
     );
