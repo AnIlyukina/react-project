@@ -31,7 +31,7 @@ export const AppInput = (props: AppInputProps) => {
             ref.current?.focus();
             setIsFocused(true);
         }
-    }, []);
+    }, [autofocus]);
 
 
     const onChangeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -47,6 +47,7 @@ export const AppInput = (props: AppInputProps) => {
         setIsFocused(true);
     };
 
+    //eslint-disable-next-line
     const onSelect = (event: any) => {
         setCaretPosition(event.target.selectionStart);
     };
