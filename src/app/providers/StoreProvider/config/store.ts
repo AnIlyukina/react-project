@@ -1,12 +1,16 @@
-import {configureStore, ReducersMapObject} from '@reduxjs/toolkit';
+import {configureStore, DeepPartial, ReducersMapObject} from '@reduxjs/toolkit';
 import {StateSchema} from './StateSchema';
 import { counterReducer } from 'entities/Counter';
 import {userReducer} from 'entities/User';
 import {createReducerManager} from './reducerManager';
 
 // Оборачиваем в функцию для переиспользования, например в storybook
-export function createReduxStore(initialState?: StateSchema) {
+export function createReduxStore(
+    initialState?: StateSchema,
+    asyncReducers?: ReducersMapObject<StateSchema>,
+) {
     const rootReducer: ReducersMapObject<StateSchema> = {
+        ...asyncReducers,
         counter: counterReducer,
         user: userReducer,
     };
@@ -14,7 +18,7 @@ export function createReduxStore(initialState?: StateSchema) {
     const reducerManager = createReducerManager(rootReducer);
 
     const store = configureStore<StateSchema>({
-        reducer: rootReducer,
+        reducer: reducerManager.reduce,
         devTools: __IS_DEV__,
         preloadedState: initialState,
     });

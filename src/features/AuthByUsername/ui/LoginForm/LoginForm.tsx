@@ -3,37 +3,34 @@ import styles from './LoginForm.module.scss';
 import {useTranslation} from 'react-i18next';
 import {AppButton, ThemeButton} from 'shared/ui/AppButton/AppButton';
 import {AppInput} from 'shared/ui/AppInput/AppInput';
-import {useDispatch, useSelector, useStore} from 'react-redux';
-import {memo, useCallback, useEffect} from 'react';
+import {useDispatch, useSelector} from 'react-redux';
+import {memo, useCallback} from 'react';
 import {loginActions} from 'features/AuthByUsername';
-import {getLoginState} from '../../model/selectors/getLoginState/getLoginState';
 import {loginByUsername} from '../../model/services/loginByUsername/loginByUsername';
 import {AppText, TextTheme} from 'shared/ui/AppText/ui/AppText';
-import {ReduxStoreWithManager} from 'app/providers/StoreProvider';
+import {getLoginUsername} from '../../model/selectors/getLoginUsername/getLoginUsername';
+import {getLoginPassword} from '../../model/selectors/getLoginPassword/getLoginPassword';
+import {getLoginIsLoading} from '../../model/selectors/getLoginIsLoading/getLoginIsLoading';
+import {getLoginError} from '../../model/selectors/getLoginError/getLoginError';
+import {DynamicModuleLoader, ReducerList} from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import {loginReducer} from 'features/AuthByUsername/model/slice/loginSlice';
 
 export interface LoginFormProps {
     className?: string
 }
+
+const initialReducers: ReducerList = {
+    'login': loginReducer
+};
+
+
 const LoginForm = memo(({className}: LoginFormProps) => {
     const {t} = useTranslation();
 
-    const store = useStore() as ReduxStoreWithManager;
-
-    const {
-        username,
-        password,
-        isLoading,
-        error } = useSelector(getLoginState);
-
-    useEffect(() => {
-        store.reducerManager.add('login', loginReducer);
-
-        return () => {
-            store.reducerManager.remove('login');
-        };
-        //eslint-disable-next-line
-    }, []);
+    const username = useSelector(getLoginUsername);
+    const password = useSelector(getLoginPassword);
+    const isLoading = useSelector(getLoginIsLoading);
+    const error = useSelector(getLoginError);
 
     const dispatch = useDispatch();
 
@@ -49,35 +46,42 @@ const LoginForm = memo(({className}: LoginFormProps) => {
         //@ts-ignore
         dispatch(loginByUsername({ username, password }));
     }, [dispatch, username, password]);
-    
+
     return (
-        <div className={classNames(styles.LoginForm, {}, [className])}>
-            <AppText title={t('Форма авторизации')}/>
-            {error &&
+        <DynamicModuleLoader
+            reducers={initialReducers}
+            removeAfterUnmount
+        >
+
+            <div className={classNames(styles.LoginForm, {}, [className])}>
+                <AppText title={t('Форма авторизации')}/>
+                {error &&
                 <AppText text={error} theme={TextTheme.ERROR}/>
-            }
-            <AppInput
-                autofocus
-                className={styles.input}
-                placeholder='Введите username'
-                value={username}
-                onChange={onChangeUsername}
-            />
-            <AppInput
-                className={styles.input}
-                placeholder='Введите password'
-                onChange={onChangePassword}
-                value={password}
-            />
-            <AppButton
-                theme={ThemeButton.OUTLINE}
-                className={styles.loginBtn}
-                onClick={onLoginClick}
-                disabled={isLoading}
-            >
-                {t('Войти')}
-            </AppButton>
-        </div>
+                }
+                <AppInput
+                    autofocus
+                    className={styles.input}
+                    placeholder='Введите username'
+                    value={username}
+                    onChange={onChangeUsername}
+                />
+                <AppInput
+                    className={styles.input}
+                    placeholder='Введите password'
+                    onChange={onChangePassword}
+                    value={password}
+                />
+                <AppButton
+                    theme={ThemeButton.OUTLINE}
+                    className={styles.loginBtn}
+                    onClick={onLoginClick}
+                    disabled={isLoading}
+                >
+                    {t('Войти')}
+                </AppButton>
+            </div>
+
+        </DynamicModuleLoader>
     );
 });
 
