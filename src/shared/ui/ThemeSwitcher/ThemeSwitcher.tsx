@@ -3,11 +3,12 @@ import {Theme, useTheme} from 'app/providers/ThemeProvider';
 import LightIcon from '../../assets/icon/theme-light.svg';
 import NightIcon from '../../assets/icon/theme-night.svg';
 import {AppButton, ThemeButton} from 'shared/ui/AppButton/AppButton';
+import {memo} from "react";
 
 interface ThemeSwitcherProps {
     className?: string
 }
-export const ThemeSwitcher = ({className}: ThemeSwitcherProps) => {
+export const ThemeSwitcher = memo(({className}: ThemeSwitcherProps) => {
     const {theme, toggleTheme} = useTheme();
     return (
         <AppButton
@@ -18,5 +19,5 @@ export const ThemeSwitcher = ({className}: ThemeSwitcherProps) => {
             { theme === Theme.LIGHT ? <LightIcon width={32} height={32}/> : <NightIcon width={32} height={32}/> }
         </AppButton>
     );
-};
+});
  

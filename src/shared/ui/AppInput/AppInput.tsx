@@ -1,6 +1,6 @@
 import {classNames} from 'shared/lib/classNames/classNames';
 import styles from './AppInput.module.scss';
-import React, {InputHTMLAttributes, useEffect, useRef, useState} from 'react';
+import React, {InputHTMLAttributes, memo, useEffect, useRef, useState} from 'react';
 
 type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange'>
 interface AppInputProps extends HTMLInputProps {
@@ -11,7 +11,7 @@ interface AppInputProps extends HTMLInputProps {
     placeholder: string,
     autofocus? : boolean,
 }
-export const AppInput = (props: AppInputProps) => {
+export const AppInput = memo((props: AppInputProps) => {
     const {
         className,
         value,
@@ -79,4 +79,4 @@ export const AppInput = (props: AppInputProps) => {
             </div>
         </div>
     );
-};
+});

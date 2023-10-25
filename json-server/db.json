@@ -25,5 +25,14 @@
       "password": "123"
     }
   ],
-  "profile": { "name": "typicode" }
+  "profile": {
+    "first": "Анна",
+    "lastname": "Илюкина",
+    "age": "25",
+    "currency": "RUB",
+    "country": "Russia",
+    "city": "Moscow",
+    "username": "admin",
+    "avatar": "https://shablon.pechenek.net/wp-content/uploads/avatarka_swordgirl.jpg"
+  }
 }

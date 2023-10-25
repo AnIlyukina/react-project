@@ -3,7 +3,7 @@ import styles from './LoginForm.module.scss';
 import {useTranslation} from 'react-i18next';
 import {AppButton, ThemeButton} from 'shared/ui/AppButton/AppButton';
 import {AppInput} from 'shared/ui/AppInput/AppInput';
-import {useDispatch, useSelector} from 'react-redux';
+import {useSelector} from 'react-redux';
 import {memo, useCallback} from 'react';
 import {loginActions} from 'features/AuthByUsername';
 import {loginByUsername} from '../../model/services/loginByUsername/loginByUsername';
@@ -14,9 +14,11 @@ import {getLoginIsLoading} from '../../model/selectors/getLoginIsLoading/getLogi
 import {getLoginError} from '../../model/selectors/getLoginError/getLoginError';
 import {DynamicModuleLoader, ReducerList} from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import {loginReducer} from 'features/AuthByUsername/model/slice/loginSlice';
+import {useAppDispatch} from "shared/lib/hooks/useAppDispatch/useAppDispatch";
 
 export interface LoginFormProps {
-    className?: string
+    className?: string;
+    onSuccess: () => void;
 }
 
 const initialReducers: ReducerList = {
@@ -24,7 +26,7 @@ const initialReducers: ReducerList = {
 };
 
 
-const LoginForm = memo(({className}: LoginFormProps) => {
+const LoginForm = memo(({className, onSuccess}: LoginFormProps) => {
     const {t} = useTranslation();
 
     const username = useSelector(getLoginUsername);
@@ -32,7 +34,7 @@ const LoginForm = memo(({className}: LoginFormProps) => {
     const isLoading = useSelector(getLoginIsLoading);
     const error = useSelector(getLoginError);
 
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
 
     const onChangeUsername = useCallback((value: string) => {
         dispatch(loginActions.setUserName(value));
@@ -42,10 +44,13 @@ const LoginForm = memo(({className}: LoginFormProps) => {
         dispatch(loginActions.setPassword(value));
     }, [dispatch]);
 
-    const onLoginClick = useCallback(() => {
+    const onLoginClick = useCallback(async () => {
         //@ts-ignore
-        dispatch(loginByUsername({ username, password }));
-    }, [dispatch, username, password]);
+        const result = await dispatch(loginByUsername({ username, password }));
+        if (result.meta.requestStatus === 'fulfilled') {
+            onSuccess()
+        }
+    }, [onSuccess, dispatch, username, password]);
 
     return (
         <DynamicModuleLoader

@@ -3,6 +3,7 @@ import {StateSchema} from './StateSchema';
 import { counterReducer } from 'entities/Counter';
 import {userReducer} from 'entities/User';
 import {createReducerManager} from './reducerManager';
+import {useDispatch} from "react-redux";
 
 // Оборачиваем в функцию для переиспользования, например в storybook
 export function createReduxStore(
@@ -28,3 +29,5 @@ export function createReduxStore(
 
     return store;
 }
+
+export type AppDispatch = ReturnType<typeof createReduxStore>['dispatch']
