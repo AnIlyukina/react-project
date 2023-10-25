@@ -76,6 +76,7 @@ module.exports = {
                 markupOnly: true,
                 ignoreAttribute: ['data-testid']
             },
-        ]
+        ],
+        'no-undef': 'off'
     }
 };

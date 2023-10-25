@@ -1,10 +1,12 @@
 import { Story } from '@storybook/react';
-import {StateSchema, StoreProvider} from 'app/providers/StoreProvider';
-import {DeepPartial, ReducersMapObject} from '@reduxjs/toolkit';
-import {loginReducer} from 'features/AuthByUsername/model/slice/loginSlice';
-import {profileReducer} from 'entities/Profile';
+import { StateSchema, StoreProvider } from 'app/providers/StoreProvider';
+import { loginReducer } from 'features/AuthByUsername/model/slice/loginSlice';
+import { profileReducer } from 'entities/Profile';
+import { ReducerList } from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
+import { DeepPartial } from "app/types/global";
+import {ReducersMapObject} from "@reduxjs/toolkit";
 
-const defaultAsyncReducers: DeepPartial<ReducersMapObject<StateSchema>> = {
+const defaultAsyncReducers: ReducerList = {
     login: loginReducer,
     profile: profileReducer,
 };
