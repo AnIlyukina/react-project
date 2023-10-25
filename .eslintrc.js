@@ -46,7 +46,9 @@ module.exports = {
         'i18next'
     ],
     'globals': {
-        '__dirname': true
+        '__dirname': true,
+        '__IS_DEV__': true,
+        '__API__': true,
     },
     'rules': {
         'react-hooks/rules-of-hooks': 'error',

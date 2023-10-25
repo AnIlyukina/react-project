@@ -1,5 +1,5 @@
-import React from "react";
-import {RoutePath} from "shared/config/routeConfig/routeConfig";
+import React from 'react';
+import {RoutePath} from 'shared/config/routeConfig/routeConfig';
 import AboutIcon from 'shared/assets/icon/about-page.svg';
 import MainIcon from 'shared/assets/icon/home-page.svg';
 import ProfileIcon from 'shared/assets/icon/profile-page.svg';
@@ -26,4 +26,4 @@ export const SidebarItemsList: SidebarItemType[] = [
         Icon: ProfileIcon,
         text: 'Профиль',
     }
-]
+];

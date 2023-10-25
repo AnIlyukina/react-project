@@ -1,6 +1,6 @@
-import {DeepPartial} from "@reduxjs/toolkit";
-import {StateSchema} from "app/providers/StoreProvider";
-import {getLoginPassword} from "./getLoginPassword";
+import {DeepPartial} from '@reduxjs/toolkit';
+import {StateSchema} from 'app/providers/StoreProvider';
+import {getLoginPassword} from './getLoginPassword';
 
 describe('getLoginPassword.test', () => {
     test('should return value', () => {
@@ -8,12 +8,12 @@ describe('getLoginPassword.test', () => {
             login: {
                 password: '112',
             }
-        }
+        };
         expect(getLoginPassword(state as StateSchema)).toEqual('112');
-    })
+    });
 
     test('should return empty value', () => {
-        const state: DeepPartial<StateSchema> = {}
+        const state: DeepPartial<StateSchema> = {};
         expect(getLoginPassword(state as StateSchema)).toEqual('');
-    })
-})
+    });
+});

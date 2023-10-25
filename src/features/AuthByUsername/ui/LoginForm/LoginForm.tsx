@@ -14,7 +14,7 @@ import {getLoginIsLoading} from '../../model/selectors/getLoginIsLoading/getLogi
 import {getLoginError} from '../../model/selectors/getLoginError/getLoginError';
 import {DynamicModuleLoader, ReducerList} from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import {loginReducer} from 'features/AuthByUsername/model/slice/loginSlice';
-import {useAppDispatch} from "shared/lib/hooks/useAppDispatch/useAppDispatch";
+import {useAppDispatch} from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 
 export interface LoginFormProps {
     className?: string;
@@ -48,7 +48,7 @@ const LoginForm = memo(({className, onSuccess}: LoginFormProps) => {
         //@ts-ignore
         const result = await dispatch(loginByUsername({ username, password }));
         if (result.meta.requestStatus === 'fulfilled') {
-            onSuccess()
+            onSuccess();
         }
     }, [onSuccess, dispatch, username, password]);
 

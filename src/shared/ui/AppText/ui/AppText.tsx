@@ -1,6 +1,6 @@
 import {classNames} from 'shared/lib/classNames/classNames';
 import styles from './AppText.module.scss';
-import {memo} from "react";
+import {memo} from 'react';
 
 export enum TextTheme {
     PRIMARY = 'primary',
