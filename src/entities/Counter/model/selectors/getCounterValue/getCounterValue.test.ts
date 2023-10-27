@@ -1,6 +1,6 @@
 import {getCounterValue} from './getCounterValue';
 import {StateSchema} from 'app/providers/StoreProvider';
-import {DeepPartial} from "app/types/global";
+import {DeepPartial} from 'app/types/global';
 
 
 describe('getCounterValue', () => {

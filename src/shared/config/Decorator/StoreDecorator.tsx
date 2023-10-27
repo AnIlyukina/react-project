@@ -2,9 +2,9 @@ import { Story } from '@storybook/react';
 import { StateSchema, StoreProvider } from 'app/providers/StoreProvider';
 import { loginReducer } from 'features/AuthByUsername/model/slice/loginSlice';
 import { profileReducer } from 'entities/Profile';
-import { ReducerList } from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
-import { DeepPartial } from "app/types/global";
-import {ReducersMapObject} from "@reduxjs/toolkit";
+import { ReducerList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { DeepPartial } from 'app/types/global';
+import {ReducersMapObject} from '@reduxjs/toolkit';
 
 const defaultAsyncReducers: ReducerList = {
     login: loginReducer,
