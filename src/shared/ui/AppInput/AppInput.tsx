@@ -11,6 +11,7 @@ interface AppInputProps extends HTMLInputProps {
     placeholder: string,
     autofocus? : boolean,
 }
+
 export const AppInput = memo((props: AppInputProps) => {
     const {
         className,
@@ -80,3 +81,5 @@ export const AppInput = memo((props: AppInputProps) => {
         </div>
     );
 });
+
+AppInput.displayName = 'AppInput';

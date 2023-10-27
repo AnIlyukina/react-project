@@ -52,3 +52,5 @@ export const AppButton = memo((props: AppButtonProps) => {
         </button>
     );
 });
+
+AppButton.displayName = 'AppButton';

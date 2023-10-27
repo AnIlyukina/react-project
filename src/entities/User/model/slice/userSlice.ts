@@ -13,7 +13,7 @@ export const userSlice = createSlice({
         },
 
         initAuthData: (state) => {
-            const user = JSON.parse(localStorage.getItem(USER_LOCAL_STORAGE_KEY));
+            const user = JSON.parse(localStorage.getItem(USER_LOCAL_STORAGE_KEY) as string);
             console.log(user, 'user');
             if (user) {
                 state.authData = user;

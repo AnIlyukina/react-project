@@ -65,3 +65,4 @@ export const Navbar = memo(({className}: NavbarProps) => {
     );
 });
 
+Navbar.displayName = 'Navbar';

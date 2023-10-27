@@ -21,3 +21,5 @@ export const LangSwitcher = memo(({className, short}: LangSwitcherProps) => {
         </AppButton>
     );
 });
+
+LangSwitcher.displayName = 'LangSwitcher';

@@ -77,6 +77,7 @@ module.exports = {
                 ignoreAttribute: ['data-testid']
             },
         ],
-        'no-undef': 'off'
+        'no-undef': 'off',
+        // '@typescript-eslint/no-explicit-any': 'off'
     }
 };

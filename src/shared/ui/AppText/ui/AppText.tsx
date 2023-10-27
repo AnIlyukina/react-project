@@ -36,3 +36,5 @@ export const AppText = memo((props: AppTextProps) => {
         </div>
     );
 });
+
+AppText.displayName = 'AppText';

@@ -3,7 +3,6 @@ import { StateSchema, StoreProvider } from 'app/providers/StoreProvider';
 import { loginReducer } from 'features/AuthByUsername/model/slice/loginSlice';
 import { profileReducer } from 'entities/Profile';
 import { ReducerList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import { DeepPartial } from 'app/types/global';
 import {ReducersMapObject} from '@reduxjs/toolkit';
 
 const defaultAsyncReducers: ReducerList = {
@@ -15,6 +14,7 @@ const defaultAsyncReducers: ReducerList = {
 export const StoreDecorator = (
     state: DeepPartial<StateSchema>,
     asyncReducer?:  DeepPartial<ReducersMapObject<StateSchema>>
+    // eslint-disable-next-line react/display-name
 ) => (StoryComponent: Story) => (
     <StoreProvider initialState={state} asyncReducers={{...defaultAsyncReducers, ...asyncReducer}}>
         <StoryComponent/>

@@ -1,6 +1,5 @@
 import {classNames} from 'shared/lib/classNames/classNames';
 //import styles from './ProfilePage.module.scss';
-import {useTranslation} from 'react-i18next';
 import {DynamicModuleLoader, ReducerList} from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import {fetchProfileData, ProfileCard, profileReducer} from 'entities/Profile';
 import {useEffect} from 'react';

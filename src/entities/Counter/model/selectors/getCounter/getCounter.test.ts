@@ -1,6 +1,5 @@
 import {getCounter} from './getCounter';
 import {StateSchema} from 'app/providers/StoreProvider';
-import {DeepPartial} from 'app/types/global';
 
 describe('getCounter', () => {
     test('should return counter value', () => {

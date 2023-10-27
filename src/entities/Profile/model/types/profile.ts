@@ -12,9 +12,9 @@ export interface Profile {
 }
 
 export interface ProfileScheme {
-    data?: Profile;
+    data?: Profile | null;
     isLoading: boolean;
-    error?: string;
+    error?: string | null;
     readonly: boolean;
 
 }

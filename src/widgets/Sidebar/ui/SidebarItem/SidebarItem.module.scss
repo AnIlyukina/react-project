@@ -1,26 +1,23 @@
-.SidebarItem {
-
-}
 .item {
-  display: flex;
-  gap: 10px;
-  align-items: center;
+    display: flex;
+    gap: 10px;
+    align-items: center;
 }
 
 .icon {
-  fill: var(--secondary-color-link);
-  width: var(--font-line-m);
-  height: var(--font-line-m);
+    fill: var(--secondary-color-link);
+    width: var(--font-line-m);
+    height: var(--font-line-m);
 }
 
 .link {
-  opacity: 1;
+    opacity: 1;
 }
 
 .collapsed {
-  .link {
-    transition: opacity .1s;
-    opacity: 0;
-    width: 0;
-  }
+    .link {
+        transition: opacity .1s;
+        opacity: 0;
+        width: 0;
+    }
 }

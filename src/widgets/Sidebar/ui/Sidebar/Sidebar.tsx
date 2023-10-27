@@ -56,3 +56,5 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
         </div>
     );
 });
+
+Sidebar.displayName = 'Sidebar';
