@@ -15,7 +15,6 @@ export const fetchProfileData = createAsyncThunk<
 
         try {
             const response = await extra.api.get<Profile>('/profile');
-
             return response.data;
         } catch (e) {
             return rejectWithValue('Вы ввели неверный логин или пароль');

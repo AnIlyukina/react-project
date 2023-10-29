@@ -11,6 +11,13 @@ interface AppTextProps {
     title?: string,
     text?: string,
     theme?: TextTheme,
+    align?: TextAlign,
+}
+
+export enum TextAlign {
+    START = 'start',
+    CENTER = 'center',
+    END = 'end',
 }
 export const AppText = memo((props: AppTextProps) => {
 
@@ -19,10 +26,11 @@ export const AppText = memo((props: AppTextProps) => {
         title,
         text,
         theme= TextTheme.PRIMARY,
+        align = TextAlign.START
     } = props;
 
     return (
-        <div className={classNames(styles.AppText, {}, [className, styles[theme]])}>
+        <div className={classNames(styles.AppText, {}, [className, styles[theme], styles[align]])}>
             {title &&
                 <p className={styles.title}>
                     {title}
