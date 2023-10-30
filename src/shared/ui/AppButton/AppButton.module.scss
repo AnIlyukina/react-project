@@ -16,6 +16,12 @@
     background: transparent;
 }
 
+.outline_red {
+  border: 1px solid  var(--red-ligth);
+  color: var(--red-ligth);
+  background: transparent;
+}
+
 .background {
     background-color: var(--bg-color);
     color: var(--primary-color);
