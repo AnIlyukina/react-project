@@ -1,20 +1,23 @@
-import {classNames} from 'shared/lib/classNames/classNames';
+import {classNames, Mods} from 'shared/lib/classNames/classNames';
 import styles from './ProfileCard.module.scss';
 import {useTranslation} from 'react-i18next';
 import {AppText, TextAlign, TextTheme} from 'shared/ui/AppText/ui/AppText';
 import {AppInput} from 'shared/ui/AppInput/AppInput';
 import {Profile} from '../../model/types/profile';
 import {Loader} from 'shared/ui/Loader/Loader';
+import {Avatar} from "shared/ui/Avatar/ui/Avatar";
 
 interface ProfileCardProps {
     className?: string,
     profileData?: Profile | null,
     error?: string,
     isLoading?: boolean,
-    onChangeLastName: (value?: string) => void,
-    onChangeFirstName: (value?: string) => void,
-    onChangeAge: (value?: string) => void,
-    onChangeCity: (value?: string) => void,
+    onChangeLastName?: (value?: string) => void,
+    onChangeFirstName?: (value?: string) => void,
+    onChangeAge?: (value?: string) => void,
+    onChangeCity?: (value?: string) => void,
+	onChangeUsername?: (value?: string) => void,
+	onChangeAvatar?: (value?: string) => void,
     readonly?: boolean,
 
 }
@@ -30,6 +33,8 @@ export const ProfileCard = (props: ProfileCardProps) => {
         readonly,
         onChangeAge,
         onChangeCity,
+		onChangeUsername,
+		onChangeAvatar,
     } = props;
 
     const {t} = useTranslation('profile');
@@ -55,16 +60,42 @@ export const ProfileCard = (props: ProfileCardProps) => {
         );
     }
 
+    const mods: Mods = {
+    	[styles.editing]: !readonly
+	}
+
     return (
-        <div className={classNames(styles.ProfileCard, {}, [className])}>
+        <div className={classNames(styles.ProfileCard, mods, [className])}>
             <div className={styles.data}>
+				{profileData?.avatar && (
+					<div className={styles.avatarWrapper}>
+						<Avatar
+							src={profileData?.avatar}
+							alt='аватар пользователя'
+						/>
+					</div>
+				)}
+				<AppInput
+					placeholder={t('Имя пользователя')}
+					value={profileData?.username}
+					className={styles.input}
+					onChange={onChangeUsername}
+					readonly={readonly}
+				/>
                 <AppInput
-                    placeholder={t('Имя')}
-                    value={profileData?.first}
+                    placeholder={t('Введите ссылку на аватар')}
+                    value={profileData?.avatar}
                     className={styles.input}
-                    onChange={onChangeFirstName}
+                    onChange={onChangeAvatar}
                     readonly={readonly}
                 />
+				<AppInput
+					placeholder={t('Имя')}
+					value={profileData?.first}
+					className={styles.input}
+					onChange={onChangeFirstName}
+					readonly={readonly}
+				/>
                 <AppInput
                     placeholder={t('Фамилия')}
                     value={profileData?.lastname}
