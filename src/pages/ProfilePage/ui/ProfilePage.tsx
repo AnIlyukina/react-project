@@ -5,18 +5,24 @@ import {DynamicModuleLoader, ReducerList} from 'shared/lib/components/DynamicMod
 import {
     fetchProfileData,
     getProfileError,
-    getProfileIsLoading,
-    ProfileCard,
-    profileReducer,
-    profileActions,
-    getProfileReadonly,
     getProfileForm,
+    getProfileIsLoading,
+    getProfileReadonly,
+    getProfileValidateErrors,
+    profileActions,
+    ProfileCard,
+    profileReducer, ValidateProfileError,
 } from 'entities/Profile';
 
 import {useCallback, useEffect} from 'react';
 import {useAppDispatch} from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import {useSelector} from 'react-redux';
 import {ProfilePageHeader} from './ProfilePageHeader/ProfilePageHeader';
+import {Currency} from "entities/Currency";
+
+import {Country} from "entities/Country";
+import {AppText, TextTheme} from "shared/ui/AppText/ui/AppText";
+import {useTranslation} from "react-i18next";
 
 interface ProfilePageProps {
     className?: string
@@ -27,13 +33,23 @@ const reducers: ReducerList = {
 };
 const ProfilePage = ({className}: ProfilePageProps) => {
 
+    const { t } = useTranslation()
+
     const dispatch = useAppDispatch();
     const profileForm = useSelector(getProfileForm);
     const isLoading = useSelector(getProfileIsLoading);
     const error = useSelector(getProfileError);
-
     const readonly = useSelector(getProfileReadonly);
-    
+    const validateErrors = useSelector(getProfileValidateErrors);
+
+    const validateErrorTranslate = {
+        [ValidateProfileError.SERVER_ERROR]: t('Серверная ошибка при сохранении'),
+        [ValidateProfileError.INCORRECT_COUNTRY]: t('Некорректный регион'),
+        [ValidateProfileError.NO_DATA]: t('Данные не указаны'),
+        [ValidateProfileError.INCORRECT_USER_DATA]: t('Имя и фамилия обязательны'),
+        [ValidateProfileError.INCORRECT_AGE]: t('Некорректный возраст'),
+    }
+
     useEffect(() => {
         dispatch(fetchProfileData());
     }, [dispatch]);
@@ -55,12 +71,22 @@ const ProfilePage = ({className}: ProfilePageProps) => {
     }, [dispatch]);
 
     const onChangeAvatar = useCallback((value? : string) => {
-		dispatch(profileActions.updateProfile({username: value || ''}));
+		dispatch(profileActions.updateProfile({avatar: value || ''}));
 	}, [dispatch]);
 
 	const onChangeUsername = useCallback((value? : string) => {
-		dispatch(profileActions.updateProfile({avatar: value || ''}));
+		dispatch(profileActions.updateProfile({username: value || ''}));
 	}, [dispatch]);
+
+
+    const onChangeCurrency = useCallback((currency? : Currency) => {
+        dispatch(profileActions.updateProfile({currency}));
+    }, [dispatch]);
+
+    const onChangeCountry = useCallback((country? : Country) => {
+        dispatch(profileActions.updateProfile({country}));
+    }, [dispatch]);
+
 
     return (
         <DynamicModuleLoader
@@ -69,6 +95,13 @@ const ProfilePage = ({className}: ProfilePageProps) => {
         >
             <div className={classNames('', {}, [className])}>
                 <ProfilePageHeader/>
+                {validateErrors?.length && validateErrors.map(err => (
+                    <AppText
+                        key={err}
+                        theme={TextTheme.ERROR}
+                        text={validateErrorTranslate[err]}
+                    />
+                ))}
                 <ProfileCard
                     profileData={profileForm}
                     isLoading={isLoading}
@@ -80,6 +113,8 @@ const ProfilePage = ({className}: ProfilePageProps) => {
                     onChangeCity={onChangeCity}
 					onChangeAvatar={onChangeAvatar}
 					onChangeUsername={onChangeUsername}
+                    onChangeCurrency={onChangeCurrency}
+                    onChangeCountry={onChangeCountry}
                 />
             </div>
         </DynamicModuleLoader>

@@ -1,18 +1,48 @@
 import {classNames, Mods} from 'shared/lib/classNames/classNames';
 import styles from './AppSelect.module.scss';
+import {ChangeEvent, memo, useMemo} from "react";
+import {Sidebar} from "widgets/Sidebar";
 
+
+export interface SelectOption {
+	value: string;
+	content: string;
+}
 interface SelectProps {
     className?: string,
-	label?: string
+	label?: string,
+	options?: SelectOption[];
+	value?: string;
+	onChange?: (value: string) => void;
+	readonly?: boolean;
 }
-export const AppSelect = (props: SelectProps) => {
+export const AppSelect = memo((props: SelectProps) => {
 	const {
-		className, label,
+		className,
+		label,
+		options,
+		value,
+		onChange,
+		readonly,
 	} = props;
 
-	const mods: Mods = {
-		//[styles.]
+	const onChangeHandler = (e: ChangeEvent<HTMLSelectElement>) => {
+		onChange?.(e.target.value)
 	}
+
+	const optionList = useMemo(() => {
+		return options?.map((opt) => (
+			<option
+				className={styles.option}
+				value={opt.value}
+				key={opt.value}
+			>
+				{opt.content}
+			</option>
+		))
+	}, [options]);
+
+	const mods: Mods = {}
     return (
         <div className={classNames(styles.Wrapper, mods, [className])}>
 			{label && (
@@ -20,10 +50,16 @@ export const AppSelect = (props: SelectProps) => {
 					{`${label}>`}
 				</span>
 			)}
-			<select className={styles.select}>
-				<option className={styles.option}>123</option>
-				<option className={styles.option}>123</option>
+			<select
+				disabled={readonly}
+				className={styles.select}
+				value={value}
+				onChange={onChangeHandler}
+			>
+				{optionList}
 			</select>
         </div>
     );
-};
+});
+
+AppSelect.displayName = 'AppSelect';

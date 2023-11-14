@@ -15,10 +15,33 @@ type Story = StoryObj<typeof meta>;
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
 export const Primary: Story = {
 	args: {
-		label: 'Лист'
+		label: 'Лист',
+		value: '2',
+		options: [
+			{
+				value: '1',
+				content: 'Первый'
+			},
+			{
+				value: '2',
+				content: 'Второй'
+			}
+		]
 	},
 };
 
 export const WithoutLabel: Story = {
-	args: {},
+	args: {
+		value: '1',
+		options: [
+			{
+				value: '1',
+				content: 'Первый'
+			},
+			{
+				value: '2',
+				content: 'Второй'
+			}
+		]
+	},
 };

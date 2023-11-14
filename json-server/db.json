@@ -26,13 +26,13 @@
     }
   ],
   "profile": {
-    "first": "Анна123",
+    "first": "Анна",
     "lastname": "Илюкина",
-    "age": "25",
+    "age": 22,
     "currency": "RUB",
-    "country": "Russia",
+    "country": "Belarus",
     "city": "Moscow",
-    "username": "admin",
-    "avatar": "https://shablon.pechenek.net/wp-content/uploads/avatarka_swordgirl.jpg"
+    "username": "",
+    "avatar": "https://img.freepik.com/free-photo/a-cupcake-with-a-strawberry-on-top-and-a-strawberry-on-the-top_1340-35087.jpg?w=740&t=st=1699955981~exp=1699956581~hmac=08e8a60428df05b1b3d74aa168258344677201d018f0dc597dcf4e44180ff7a9"
   }
 }
