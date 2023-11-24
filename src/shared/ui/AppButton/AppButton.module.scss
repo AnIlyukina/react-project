@@ -1,6 +1,11 @@
 .AppButton {
     cursor: pointer;
     padding: 5px 10px;
+    z-index: 2;
+
+    &:hover {
+        opacity: .7;
+    }
 }
 
 .clear {

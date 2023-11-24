@@ -1,5 +1,5 @@
 import type {Meta, StoryObj} from '@storybook/react';
-import {AppText, TextTheme} from './AppText';
+import {AppText, TextSize, TextTheme} from './AppText';
 import {ThemeDecorator} from 'shared/config/Decorator/ThemeDecorator';
 import {Theme} from 'app/providers/ThemeProvider';
 
@@ -64,3 +64,12 @@ export const OnlyTextDark: Story = {
     },
 };
 OnlyTextDark.decorators = [ThemeDecorator(Theme.DARK)];
+
+
+export const SizeL: Story = {
+    args: {
+        text: 'Text',
+        title: 'Title dvdvdv dvdvdv dvdv',
+        size: TextSize.L
+    },
+};

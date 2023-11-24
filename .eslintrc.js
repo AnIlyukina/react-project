@@ -49,6 +49,7 @@ module.exports = {
         '__dirname': true,
         '__IS_DEV__': true,
         '__API__': true,
+        __PROJECT__: true,
     },
     'rules': {
         'react-hooks/rules-of-hooks': 'error',

@@ -3,6 +3,8 @@ import ProfilePage from './ProfilePage';
 import {ThemeDecorator} from 'shared/config/Decorator/ThemeDecorator';
 import {Theme} from 'app/providers/ThemeProvider';
 import {StoreDecorator} from 'shared/config/Decorator/StoreDecorator';
+import {Country} from "entities/Country";
+import {Currency} from "entities/Currency";
 
 const meta = {
     title: 'pages/ProfilePage',
@@ -19,9 +21,35 @@ type Story = StoryObj<typeof meta>;
 export const Light: Story = {
     args: {},
 };
-Light.decorators = [StoreDecorator({})];
+Light.decorators = [StoreDecorator({
+    profile: {
+        data: {
+            username: 'admin',
+            avatar: 'https://shablon.pechenek.net/wp-content/uploads/avatarka_swordgirl.jpg',
+            age: 11,
+            country: Country.Russia,
+            first: 'SA',
+            lastname: 'sdfji',
+            city: 'asas',
+            currency: Currency.EUR,
+        }
+    }
+})];
 
 export const Dark: Story = {
     args: {},
 };
-Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({})];
+Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({
+    profile: {
+        data: {
+            username: 'admin',
+            avatar: 'https://shablon.pechenek.net/wp-content/uploads/avatarka_swordgirl.jpg',
+            age: 11,
+            country: Country.Russia,
+            first: 'SA',
+            lastname: 'sdfji',
+            city: 'asas',
+            currency: Currency.EUR,
+        }
+    }
+})];

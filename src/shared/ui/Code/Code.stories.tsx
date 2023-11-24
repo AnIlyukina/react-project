@@ -1,19 +1,19 @@
 import type {Meta, StoryObj} from '@storybook/react';
-import {ArticleDetails} from './ArticleDetails';
+import {Code} from "./Code";
 
 const meta = {
-    title: 'shared/ArticleDetails',
-    component: ArticleDetails,
+    title: 'shared/Code',
+    component: Code,
     tags: ['autodocs'],
     argTypes: {},
-} satisfies Meta<typeof ArticleDetails>;
+} satisfies Meta<typeof Code>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
-export const Normal: Story = {
+export const Primary: Story = {
     args: {
-        id: '1'
+        children: 'gngndgr rgrgrgr'
     },
 };

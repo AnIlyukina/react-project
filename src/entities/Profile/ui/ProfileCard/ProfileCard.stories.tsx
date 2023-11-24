@@ -23,6 +23,21 @@ export const Primary: Story = {
     args: {
         profileData: {
             username: 'admin',
+            avatar: 'https://shablon.pechenek.net/wp-content/uploads/avatarka_swordgirl.jpg',
+            age: 11,
+            country: Country.Russia,
+            first: 'SA',
+            lastname: 'sdfji',
+            city: 'asas',
+            currency: Currency.EUR
+        }
+    },
+};
+export const Dark: Story = {
+    args: {
+        profileData: {
+            username: 'admin',
+            avatar: 'https://shablon.pechenek.net/wp-content/uploads/avatarka_swordgirl.jpg',
             age: 11,
             country: Country.Russia,
             first: 'SA',
@@ -33,18 +48,19 @@ export const Primary: Story = {
     },
 };
 
-// export const WithError: Story = {
-//     args: {
-//         error: 'true'
-//     },
-// };
-//
-//
-// export const Loading: Story = {
-//     args: {
-//         isLoading: true
-//     },
-// };
+Dark.decorators = [ThemeDecorator(Theme.DARK)]
+export const WithError: Story = {
+    args: {
+        error: 'true'
+    },
+};
+
+
+export const Loading: Story = {
+    args: {
+        isLoading: true
+    },
+};
 
 
 
