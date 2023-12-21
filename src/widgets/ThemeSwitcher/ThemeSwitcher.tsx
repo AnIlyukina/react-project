@@ -1,7 +1,7 @@
 import {classNames} from 'shared/lib/classNames/classNames';
 import {Theme, useTheme} from 'app/providers/ThemeProvider';
-import LightIcon from '../../assets/icon/theme-light.svg';
-import NightIcon from '../../assets/icon/theme-night.svg';
+import LightIcon from '../../shared/assets/icon/theme-light.svg';
+import NightIcon from '../../shared/assets/icon/theme-night.svg';
 import {AppButton, ThemeButton} from 'shared/ui/AppButton/AppButton';
 import {memo} from 'react';
 

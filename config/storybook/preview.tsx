@@ -20,7 +20,6 @@ const preview: Preview = {
         RouterDecorator,
         ThemeDecorator(Theme.LIGHT),
     ]
-
 };
 
 

@@ -44,6 +44,7 @@
     "@types/react": "^18.2.22",
     "@types/react-dom": "^18.2.7",
     "@types/react-router-dom": "^5.3.3",
+    "@types/react-virtualized": "^9.21.29",
     "@types/webpack": "^5.28.2",
     "@types/webpack-bundle-analyzer": "^4.6.1",
     "@types/webpack-dev-server": "^4.7.2",
@@ -57,6 +58,7 @@
     "esbuild": "^0.19.4",
     "esbuild-jest": "^0.5.0",
     "eslint": "^8.10.0",
+    "eslint-plugin-custom-eslint-plugin": "^0.0.2",
     "eslint-plugin-i18next": "^6.0.3",
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",
@@ -95,7 +97,8 @@
     "react-dom": "^18.2.0",
     "react-i18next": "^13.2.2",
     "react-redux": "^8.1.3",
-    "react-router-dom": "^6.2.1"
+    "react-router-dom": "^6.2.1",
+    "react-virtualized": "^9.22.5"
   },
   "overrides": {
     "loki": {

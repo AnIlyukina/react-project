@@ -43,7 +43,8 @@ module.exports = {
         'react-hooks',
         '@typescript-eslint',
         'react',
-        'i18next'
+        'i18next',
+        'custom-eslint-plugin'
     ],
     'globals': {
         '__dirname': true,
@@ -79,6 +80,7 @@ module.exports = {
             },
         ],
         'no-undef': 'off',
+        'custom-eslint-plugin/path-checker': 'error'
         // '@typescript-eslint/no-explicit-any': 'off'
     }
 };

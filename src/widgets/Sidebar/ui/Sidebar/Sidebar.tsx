@@ -1,7 +1,7 @@
 import {classNames} from 'shared/lib/classNames/classNames';
 import styles from './Sidebar.module.scss';
 import React, {useState, memo} from 'react';
-import {ThemeSwitcher} from 'shared/ui/ThemeSwitcher/ThemeSwitcher';
+import {ThemeSwitcher} from '../../../ThemeSwitcher/ThemeSwitcher';
 import {LangSwitcher} from 'shared/ui/LangSwitcher/LangSwitcher';
 import {AppButton, ButtonSize, ThemeButton} from 'shared/ui/AppButton/AppButton';
 import {SidebarItemsList} from '../../model/items';

@@ -7,15 +7,19 @@ import {AxiosInstance} from 'axios';
 import {To} from 'history';
 import {NavigateOptions} from 'react-router';
 import {ArticleDetailsSchema} from 'entities/Article';
+import { ArticlesPageSchema } from 'pages/ArticlesPage';
+import { UISchema } from 'features/UI';
 
 export interface StateSchema {
     counter: CounterScheme;
     user: UserSchema;
+    ui: UISchema;
 
     // Асинхронные редюсеры
     login?: LoginSchema;
     profile?: ProfileScheme;
     articleDetails?: ArticleDetailsSchema;
+    articlesPage?: ArticlesPageSchema;
 }
 
 export type StateSchemaKey = keyof StateSchema
