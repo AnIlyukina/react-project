@@ -1,4 +1,3 @@
-import {CounterScheme} from 'entities/Counter';
 import {UserSchema} from 'entities/User';
 import {LoginSchema} from 'features/AuthByUsername/model/types/loginSchema';
 import {AnyAction, CombinedState, EnhancedStore, Reducer, ReducersMapObject} from '@reduxjs/toolkit';
@@ -11,7 +10,6 @@ import { ArticlesPageSchema } from 'pages/ArticlesPage';
 import { UISchema } from 'features/UI';
 
 export interface StateSchema {
-    counter: CounterScheme;
     user: UserSchema;
     ui: UISchema;
 

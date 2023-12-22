@@ -16,6 +16,7 @@ interface AppTextProps {
 }
 
 export enum TextSize {
+    S = 'size_s',
     M = 'size_m',
     L = 'size_l',
 }
@@ -25,6 +26,15 @@ export enum TextAlign {
     CENTER = 'center',
     END = 'end',
 }
+
+type HeaderTagType = 'h1' | 'h2' | 'h3';
+
+const mapSizeToHeaderTag: Record<TextSize, HeaderTagType> = {
+    [TextSize.S]: 'h3',
+    [TextSize.M]: 'h2',
+    [TextSize.L]: 'h1',
+}
+
 export const AppText = memo((props: AppTextProps) => {
 
     const {
@@ -36,12 +46,13 @@ export const AppText = memo((props: AppTextProps) => {
         size = TextSize.M
     } = props;
 
+    const HeaderTag = mapSizeToHeaderTag[size]
     return (
         <div className={classNames(styles.AppText, {}, [className, styles[theme], styles[align], styles[size]])}>
             {title &&
-                <p className={styles.title}>
+                <HeaderTag className={styles.title}>
                     {title}
-                </p>
+                </HeaderTag>
             }
             {text &&
                 <p className={styles.text}>

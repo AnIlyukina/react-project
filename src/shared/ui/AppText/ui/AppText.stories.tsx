@@ -73,3 +73,19 @@ export const SizeL: Story = {
         size: TextSize.L
     },
 };
+
+export const SizeM: Story = {
+    args: {
+        text: 'Text',
+        title: 'Title dvdvdv dvdvdv dvdv',
+        size: TextSize.M
+    },
+};
+
+export const SizeS: Story = {
+    args: {
+        text: 'Text',
+        title: 'Title dvdvdv dvdvdv dvdv',
+        size: TextSize.S
+    },
+};

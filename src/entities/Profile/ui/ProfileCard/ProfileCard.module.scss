@@ -2,21 +2,9 @@
     padding: 20px;
 }
 
-.avatarWrapper {
-	display: flex;
-	width: 100%;
-	justify-content: center;
-}
-
-.input {
-    margin-top: 10px;
-}
-
 .loading,
 .error {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    height: 300px;
 }
 
 .editing {

@@ -23,6 +23,7 @@ import {Currency} from "entities/Currency";
 import {Country} from "entities/Country";
 import {AppText, TextTheme} from "shared/ui/AppText/ui/AppText";
 import {useTranslation} from "react-i18next";
+import {VStack} from "shared/ui/Stack/VStack/VStack";
 
 interface ProfilePageProps {
     className?: string
@@ -96,28 +97,30 @@ const ProfilePage = ({className}: ProfilePageProps) => {
             removeAfterUnmount
         >
             <div className={classNames('', {}, [className])}>
-                <ProfilePageHeader/>
-                {validateErrors?.length && validateErrors.map(err => (
-                    <AppText
-                        key={err}
-                        theme={TextTheme.ERROR}
-                        text={validateErrorTranslate[err]}
+                <VStack max={true} gap='16'>
+                    <ProfilePageHeader/>
+                    {validateErrors?.length && validateErrors.map(err => (
+                        <AppText
+                            key={err}
+                            theme={TextTheme.ERROR}
+                            text={validateErrorTranslate[err]}
+                        />
+                    ))}
+                    <ProfileCard
+                        profileData={profileForm}
+                        isLoading={isLoading}
+                        error={error}
+                        readonly={readonly}
+                        onChangeFirstName={onChangeFirstName}
+                        onChangeLastName={onChangeLastName}
+                        onChangeAge={onChangeAge}
+                        onChangeCity={onChangeCity}
+                        onChangeAvatar={onChangeAvatar}
+                        onChangeUsername={onChangeUsername}
+                        onChangeCurrency={onChangeCurrency}
+                        onChangeCountry={onChangeCountry}
                     />
-                ))}
-                <ProfileCard
-                    profileData={profileForm}
-                    isLoading={isLoading}
-                    error={error}
-                    readonly={readonly}
-                    onChangeFirstName={onChangeFirstName}
-                    onChangeLastName={onChangeLastName}
-                    onChangeAge={onChangeAge}
-                    onChangeCity={onChangeCity}
-					onChangeAvatar={onChangeAvatar}
-					onChangeUsername={onChangeUsername}
-                    onChangeCurrency={onChangeCurrency}
-                    onChangeCountry={onChangeCountry}
-                />
+                </VStack>
             </div>
         </DynamicModuleLoader>
     );

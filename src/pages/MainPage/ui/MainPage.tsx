@@ -1,14 +1,15 @@
 import {useTranslation} from 'react-i18next';
-import {Counter} from 'entities/Counter';
+import {HStack} from "shared/ui/Stack";
+import {ListBox} from "shared/ui/ListBox/ListBox";
+import {Page} from "widgets/Page/Page";
 
 const MainPage = () =>  {
     const { t } = useTranslation('mainPage');
 
     return (
-        <div>
+        <Page>
             {t('Главная страница')}
-            <Counter/>
-        </div>
+        </Page>
     );
 };
 

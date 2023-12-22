@@ -3,6 +3,8 @@ import {AppSelect} from "shared/ui/Select/AppSelect";
 import {Country} from "../../model/types/country";
 import {useTranslation} from "react-i18next";
 import {memo, useCallback} from "react";
+import {List} from "react-virtualized";
+import {ListBox} from "shared/ui/ListBox/ListBox";
 
 interface CountrySelectProp {
     className?: string;
@@ -31,15 +33,26 @@ export const CountrySelect = memo((props: CountrySelectProp) => {
     }, [onChange]);
 
     return (
-        <AppSelect
-            className={classNames('', {}, [className])}
-            label={t('Укажите cтрану')}
-            options={option}
+        <ListBox
             value={value}
-            onChange={onChangeHandler}
+            defaultValue={t('Укажите страну')}
+            className={className}
             readonly={readonly}
+            items={option}
+            onChange={onChangeHandler}
         />
-    );
+    )
+
+    // return (
+    //     <AppSelect
+    //         className={classNames('', {}, [className])}
+    //         label={t('Укажите cтрану')}
+    //         options={option}
+    //         value={value}
+    //         onChange={onChangeHandler}
+    //         readonly={readonly}
+    //     />
+    // );
 });
 
 CountrySelect.displayName = 'CountrySelect';

@@ -6,6 +6,7 @@ import {LangSwitcher} from 'shared/ui/LangSwitcher/LangSwitcher';
 import {AppButton, ButtonSize, ThemeButton} from 'shared/ui/AppButton/AppButton';
 import {SidebarItemsList} from '../../model/items';
 import {SidebarItem} from '../SidebarItem/SidebarItem';
+import {VStack} from "shared/ui/Stack/VStack/VStack";
 
 interface SidebarProps {
   className?: string
@@ -18,7 +19,7 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
     };
 
     return (
-        <div
+        <aside
             data-testid="sidebar"
             className={classNames(styles.Sidebar, { [styles.collapsed]: collapsed }, [className])}
         >
@@ -34,7 +35,10 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
             </AppButton>
 
 
-            <div className={styles.items}>
+            <VStack
+                role='navigation'
+                gap='8'
+                className={styles.items}>
                 {
                     SidebarItemsList.map(item => (
                         <SidebarItem
@@ -44,7 +48,7 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
                         />
                     ))
                 }
-            </div>
+            </VStack>
 
             <div className={styles.switchers}>
                 <ThemeSwitcher/>
@@ -53,7 +57,7 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
                     short={collapsed}
                 />
             </div>
-        </div>
+        </aside>
     );
 });
 
