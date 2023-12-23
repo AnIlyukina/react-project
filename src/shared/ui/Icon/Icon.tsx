@@ -15,4 +15,4 @@ export const Icon = memo((props: IconProps) => {
         <Svg className={classNames(styles.Icon, {}, [className])}/>
     );
 });
-Icon.displayName = 'Icon'
+Icon.displayName = 'Icon';

@@ -27,3 +27,5 @@ export const Card = memo((props: CardProps) => {
         </div>
     );
 });
+
+Card.displayName = 'Card';

@@ -1,7 +1,7 @@
 import {fetchProfileData} from './fetchProfileData';
 import {TestAsyncThunk} from 'shared/lib/tests/testAsyncThunk/testAsyncThunk';
-import {Country} from "entities/Country";
-import {Currency} from "entities/Currency";
+import {Country} from 'entities/Country';
+import {Currency} from 'entities/Currency';
 
 const data = {
     username: 'admin',
@@ -12,7 +12,7 @@ const data = {
     lastname: 'sdfji',
     city: 'asas',
     currency: Currency.EUR,
-}
+};
 
 describe('fetchProfileData.test', () => {
     test('success', async () => {

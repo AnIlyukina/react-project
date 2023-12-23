@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 import {useTranslation} from 'react-i18next';
 import { useSearchParams } from 'react-router-dom';
 import {memo, useCallback} from 'react';
-import {DynamicModuleLoader, ReducerList} from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
+import {DynamicModuleLoader, ReducerList} from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { ArticleList } from 'entities/Article';
 import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage';
 import { ArticlesPageFilters } from 'pages/ArticlesPage/ui/ArticlesPageFilters/ArticlesPageFilters';

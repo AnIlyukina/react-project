@@ -6,7 +6,7 @@ import {LangSwitcher} from 'shared/ui/LangSwitcher/LangSwitcher';
 import {AppButton, ButtonSize, ThemeButton} from 'shared/ui/AppButton/AppButton';
 import {SidebarItemsList} from '../../model/items';
 import {SidebarItem} from '../SidebarItem/SidebarItem';
-import {VStack} from "shared/ui/Stack/VStack/VStack";
+import {VStack} from 'shared/ui/Stack/VStack/VStack';
 
 interface SidebarProps {
   className?: string

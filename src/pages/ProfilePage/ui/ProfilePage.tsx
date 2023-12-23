@@ -18,12 +18,12 @@ import {useCallback, useEffect} from 'react';
 import {useAppDispatch} from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import {useSelector} from 'react-redux';
 import {ProfilePageHeader} from './ProfilePageHeader/ProfilePageHeader';
-import {Currency} from "entities/Currency";
+import {Currency} from 'entities/Currency';
 
-import {Country} from "entities/Country";
-import {AppText, TextTheme} from "shared/ui/AppText/ui/AppText";
-import {useTranslation} from "react-i18next";
-import {VStack} from "shared/ui/Stack/VStack/VStack";
+import {Country} from 'entities/Country';
+import {AppText, TextTheme} from 'shared/ui/AppText/ui/AppText';
+import {useTranslation} from 'react-i18next';
+import {VStack} from 'shared/ui/Stack/VStack/VStack';
 
 interface ProfilePageProps {
     className?: string
@@ -34,7 +34,7 @@ const reducers: ReducerList = {
 };
 const ProfilePage = ({className}: ProfilePageProps) => {
 
-    const { t } = useTranslation()
+    const { t } = useTranslation();
 
     const dispatch = useAppDispatch();
     const profileForm = useSelector(getProfileForm);
@@ -49,7 +49,7 @@ const ProfilePage = ({className}: ProfilePageProps) => {
         [ValidateProfileError.NO_DATA]: t('Данные не указаны'),
         [ValidateProfileError.INCORRECT_USER_DATA]: t('Имя и фамилия обязательны'),
         [ValidateProfileError.INCORRECT_AGE]: t('Некорректный возраст'),
-    }
+    };
 
     useEffect(() => {
         if (__PROJECT__ !== 'storybook') {
@@ -74,12 +74,12 @@ const ProfilePage = ({className}: ProfilePageProps) => {
     }, [dispatch]);
 
     const onChangeAvatar = useCallback((value? : string) => {
-		dispatch(profileActions.updateProfile({avatar: value || ''}));
-	}, [dispatch]);
+        dispatch(profileActions.updateProfile({avatar: value || ''}));
+    }, [dispatch]);
 
-	const onChangeUsername = useCallback((value? : string) => {
-		dispatch(profileActions.updateProfile({username: value || ''}));
-	}, [dispatch]);
+    const onChangeUsername = useCallback((value? : string) => {
+        dispatch(profileActions.updateProfile({username: value || ''}));
+    }, [dispatch]);
 
 
     const onChangeCurrency = useCallback((currency? : Currency) => {

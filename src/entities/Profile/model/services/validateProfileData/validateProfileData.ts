@@ -1,5 +1,5 @@
-import {Profile} from "entities/Profile";
-import {ValidateProfileError} from "entities/Profile/model/types/profile";
+import {Profile} from 'entities/Profile';
+import {ValidateProfileError} from 'entities/Profile/model/types/profile';
 
 export const validateProfileData = (profile?: Profile | null) => {
 
@@ -23,4 +23,4 @@ export const validateProfileData = (profile?: Profile | null) => {
     }
 
     return errors;
-}
+};

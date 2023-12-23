@@ -1,6 +1,5 @@
-import {classNames} from 'shared/lib/classNames/classNames';
 import {memo} from 'react';
-import {Flex, FlexProps} from "shared/ui/Stack/Flex/Flex";
+import {Flex, FlexProps} from 'shared/ui/Stack/Flex/Flex';
 
 type VStackProps = Omit<FlexProps, 'direction'>
 export const VStack = memo((props: VStackProps) => {
@@ -11,4 +10,4 @@ export const VStack = memo((props: VStackProps) => {
         <Flex {...props} direction={'column'} align={align}/>
     );
 });
-VStack.displayName = 'VStack'
+VStack.displayName = 'VStack';

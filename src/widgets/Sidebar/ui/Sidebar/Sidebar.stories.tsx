@@ -2,7 +2,7 @@ import type {Meta, StoryObj} from '@storybook/react';
 import {Sidebar} from './Sidebar';
 import {ThemeDecorator} from 'shared/config/Decorator/ThemeDecorator';
 import {Theme} from 'app/providers/ThemeProvider';
-import {StoreDecorator} from "shared/config/Decorator/StoreDecorator";
+import {StoreDecorator} from 'shared/config/Decorator/StoreDecorator';
 
 const meta = {
     title: 'widgets/Sidebar',
@@ -42,7 +42,7 @@ Dark.decorators = [
 
 export const NoAuth: Story = {
     args: {},
-}
+};
 NoAuth.decorators = [
     StoreDecorator({
         user: {

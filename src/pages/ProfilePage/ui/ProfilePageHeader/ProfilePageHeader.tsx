@@ -6,7 +6,7 @@ import { useSelector} from 'react-redux';
 import {getProfileReadonly, profileActions, updateProfileData} from 'entities/Profile';
 import {useAppDispatch} from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useCallback } from 'react';
-import {HStack} from "shared/ui/Stack/HStack/HStack";
+import {HStack} from 'shared/ui/Stack/HStack/HStack';
 
 interface ProfilePageHeaderProps {
     className?: string

@@ -12,25 +12,25 @@ const justifyClasses: Record<FlexJustify, string> = {
     center: styles.justifyCenter,
     end: styles.justifyEnd,
     between: styles.justifyBetween,
-}
+};
 
 const alignClasses: Record<FlexAlign, string> = {
     start: styles.alignStart,
     center: styles.alignCenter,
     end: styles.alignEnd,
-}
+};
 
 const directionClasses: Record<FlexDirection, string> = {
     row: styles.directionRow,
     column: styles.directionColumn,
-}
+};
 
 const gapClasses: Record<FlexGap, string> = {
     4: styles.gap4,
     8: styles.gap8,
     16: styles.gap16,
     32: styles.gap32,
-}
+};
 
 type DivProps = DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
 
@@ -64,15 +64,15 @@ export const Flex = memo((props: FlexProps) => {
         alignClasses[align],
         directionClasses[direction],
         gap && gapClasses[gap]
-    ]
+    ];
 
     const mods = {
-       [styles.max]: max
-    }
+        [styles.max]: max
+    };
     return (
         <div className={classNames(styles.Flex, mods, classes)}>
             {children}
         </div>
     );
 });
-Flex.displayName = 'Flex'
+Flex.displayName = 'Flex';

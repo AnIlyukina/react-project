@@ -5,13 +5,13 @@ import {AppText, TextAlign, TextTheme} from 'shared/ui/AppText/ui/AppText';
 import {AppInput} from 'shared/ui/AppInput/AppInput';
 import {Profile} from '../../model/types/profile';
 import {Loader} from 'shared/ui/Loader/Loader';
-import {Avatar} from "shared/ui/Avatar/ui/Avatar";
+import {Avatar} from 'shared/ui/Avatar/ui/Avatar';
 
-import {Currency} from "entities/Currency/model/types/currency";
-import {CurrencySelect} from "entities/Currency";
+import {Currency} from 'entities/Currency/model/types/currency';
+import {CurrencySelect} from 'entities/Currency';
 
-import {Country, CountrySelect} from "entities/Country";
-import {HStack, VStack} from "shared/ui/Stack";
+import {Country, CountrySelect} from 'entities/Country';
+import {HStack, VStack} from 'shared/ui/Stack';
 
 interface ProfileCardProps {
     className?: string,
@@ -41,8 +41,8 @@ export const ProfileCard = (props: ProfileCardProps) => {
         readonly,
         onChangeAge,
         onChangeCity,
-		onChangeUsername,
-		onChangeAvatar,
+        onChangeUsername,
+        onChangeAvatar,
         onChangeCurrency,
         onChangeCountry,
     } = props;
@@ -72,7 +72,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
 
     const mods: Mods = {
     	[styles.editing]: !readonly
-	}
+    };
 
     return (
         <VStack gap='8' max className={classNames(styles.ProfileCard, mods, [className])}>

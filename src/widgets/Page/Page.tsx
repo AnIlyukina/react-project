@@ -59,3 +59,5 @@ export const Page = memo((props: PageProps) => {
         </main>
     );
 });
+
+Page.displayName = 'Page';

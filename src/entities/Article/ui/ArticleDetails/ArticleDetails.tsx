@@ -6,20 +6,20 @@ import {articleDetailsReducer} from '../../model/slice/articleDetailsSlice';
 import {memo, useCallback, useEffect} from 'react';
 import {useAppDispatch} from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import {fetchArticleById} from '../../model/services/fetchArticleById/fetchArticleById';
-import {useSelector} from "react-redux";
+import {useSelector} from 'react-redux';
 import {
     getArticleDetailsData,
     getArticleDetailsError,
     getArticleDetailsIsLoading
-} from "../../model/selectors/articleDetails";
-import {AppText, TextAlign, TextSize} from "shared/ui/AppText/ui/AppText";
-import {Skeleton} from "shared/ui/Skeleton/Skeleton";
-import {Avatar} from "shared/ui/Avatar/ui/Avatar";
-import {ArticleBlock, ArticleTypeBlock} from "../../model/types/article";
-import {ArticleCodeBlockComponent} from "entities/Article/ui/ArticleCodeBlockComponent/ArticleCodeBlockComponent";
-import {ArticleImageBlockComponent} from "entities/Article/ui/ArticleImageBlockComponent/ArticleImageBlockComponent";
-import {ArticleTextBlockComponent} from "entities/Article/ui/ArticleTextBlockComponent/ArticleTextBlockComponent";
-import {HStack, VStack} from "shared/ui/Stack";
+} from '../../model/selectors/articleDetails';
+import {AppText, TextAlign, TextSize} from 'shared/ui/AppText/ui/AppText';
+import {Skeleton} from 'shared/ui/Skeleton/Skeleton';
+import {Avatar} from 'shared/ui/Avatar/ui/Avatar';
+import {ArticleBlock, ArticleTypeBlock} from '../../model/types/article';
+import {ArticleCodeBlockComponent} from 'entities/Article/ui/ArticleCodeBlockComponent/ArticleCodeBlockComponent';
+import {ArticleImageBlockComponent} from 'entities/Article/ui/ArticleImageBlockComponent/ArticleImageBlockComponent';
+import {ArticleTextBlockComponent} from 'entities/Article/ui/ArticleTextBlockComponent/ArticleTextBlockComponent';
+import {HStack, VStack} from 'shared/ui/Stack';
 
 interface ArticleDetailsProps {
     className?: string;
@@ -42,25 +42,25 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
 
     const renderBlock = useCallback((block: ArticleBlock) => {
         switch (block.type) {
-            case ArticleTypeBlock.CODE:
-                return <ArticleCodeBlockComponent
-                    block={block}
-                    className={styles.block}
-                />;
-            case ArticleTypeBlock.IMAGE:
-                return <ArticleImageBlockComponent
-                    block={block}
-                    className={styles.block}
-                />;
-            case ArticleTypeBlock.TEXT:
-                return <ArticleTextBlockComponent
-                    className={styles.block}
-                    block={block}
-                />;
-            default:
-                return null;
+        case ArticleTypeBlock.CODE:
+            return <ArticleCodeBlockComponent
+                block={block}
+                className={styles.block}
+            />;
+        case ArticleTypeBlock.IMAGE:
+            return <ArticleImageBlockComponent
+                block={block}
+                className={styles.block}
+            />;
+        case ArticleTypeBlock.TEXT:
+            return <ArticleTextBlockComponent
+                className={styles.block}
+                block={block}
+            />;
+        default:
+            return null;
         }
-    }, [])
+    }, []);
 
     let content;
 
@@ -98,14 +98,14 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
                     height={200}
                 />
             </div>
-        )
+        );
     } else if (error) {
         content = (
             <AppText
                 align={TextAlign.CENTER}
                 title={t('Произошла ошибка при загрузке статьи')}
             />
-        )
+        );
     } else {
         content = (
             <>
@@ -134,7 +134,7 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
                 </VStack>
                 {article?.blocks.map(renderBlock)}
             </>
-        )
+        );
     }
 
     useEffect(() => {

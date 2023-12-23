@@ -1,7 +1,7 @@
 import {StateSchema} from 'app/providers/StoreProvider';
 import {getProfileData} from './getProfileData';
-import {Country} from "entities/Country";
-import {Currency} from "entities/Currency";
+import {Country} from 'entities/Country';
+import {Currency} from 'entities/Currency';
 
 describe('getProfileData', () => {
     test('should return profileData', () => {
@@ -14,7 +14,7 @@ describe('getProfileData', () => {
             lastname: 'sdfji',
             city: 'asas',
             currency: Currency.EUR,
-        }
+        };
 
         const state: DeepPartial<StateSchema> = {
             profile: {

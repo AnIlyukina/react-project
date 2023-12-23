@@ -3,8 +3,8 @@ import ProfilePage from './ProfilePage';
 import {ThemeDecorator} from 'shared/config/Decorator/ThemeDecorator';
 import {Theme} from 'app/providers/ThemeProvider';
 import {StoreDecorator} from 'shared/config/Decorator/StoreDecorator';
-import {Country} from "entities/Country";
-import {Currency} from "entities/Currency";
+import {Country} from 'entities/Country';
+import {Currency} from 'entities/Currency';
 
 const meta = {
     title: 'pages/ProfilePage',

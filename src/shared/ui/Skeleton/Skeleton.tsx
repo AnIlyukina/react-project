@@ -22,7 +22,7 @@ export const Skeleton = memo((props: SkeletonProps) => {
         height,
         width,
         borderRadius: border,
-    }
+    };
 
     return (
         <div
@@ -33,4 +33,4 @@ export const Skeleton = memo((props: SkeletonProps) => {
         </div>
     );
 });
-Skeleton.displayName = 'Skeleton'
+Skeleton.displayName = 'Skeleton';

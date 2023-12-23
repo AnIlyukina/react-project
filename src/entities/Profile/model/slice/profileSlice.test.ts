@@ -1,8 +1,8 @@
 import {ProfileScheme, ValidateProfileError} from '../types/profile';
 import {profileReducer, profileActions} from './profileSlice';
-import {Country} from "entities/Country";
-import {Currency} from "entities/Currency";
-import {updateProfileData} from "entities/Profile";
+import {Country} from 'entities/Country';
+import {Currency} from 'entities/Currency';
+import {updateProfileData} from 'entities/Profile';
 
 const data = {
     username: 'admin',
@@ -13,7 +13,7 @@ const data = {
     lastname: 'sdfji',
     city: 'asas',
     currency: Currency.EUR,
-}
+};
 describe('profileSlice.test', () => {
     test('test setReadonly', () => {
         const state: DeepPartial<ProfileScheme> = { readonly: false };

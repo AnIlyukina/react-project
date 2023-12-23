@@ -1,5 +1,5 @@
 import {memo} from 'react';
-import {Flex, FlexProps} from "shared/ui/Stack/Flex/Flex";
+import {Flex, FlexProps} from 'shared/ui/Stack/Flex/Flex';
 
 type HStackProps = Omit<FlexProps, 'direction'>
 export const HStack = memo((props: HStackProps) => {
@@ -9,4 +9,4 @@ export const HStack = memo((props: HStackProps) => {
         <Flex {...props} direction={'row'}/>
     );
 });
-HStack.displayName = 'HStack'
+HStack.displayName = 'HStack';

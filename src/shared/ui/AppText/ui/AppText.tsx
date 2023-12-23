@@ -33,7 +33,7 @@ const mapSizeToHeaderTag: Record<TextSize, HeaderTagType> = {
     [TextSize.S]: 'h3',
     [TextSize.M]: 'h2',
     [TextSize.L]: 'h1',
-}
+};
 
 export const AppText = memo((props: AppTextProps) => {
 
@@ -46,7 +46,7 @@ export const AppText = memo((props: AppTextProps) => {
         size = TextSize.M
     } = props;
 
-    const HeaderTag = mapSizeToHeaderTag[size]
+    const HeaderTag = mapSizeToHeaderTag[size];
     return (
         <div className={classNames(styles.AppText, {}, [className, styles[theme], styles[align], styles[size]])}>
             {title &&

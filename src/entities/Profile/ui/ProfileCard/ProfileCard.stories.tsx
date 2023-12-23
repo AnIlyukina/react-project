@@ -3,8 +3,8 @@ import { ProfileCard } from './ProfileCard';
 import {ThemeDecorator} from 'shared/config/Decorator/ThemeDecorator';
 import {Theme} from 'app/providers/ThemeProvider';
 import {StoreDecorator} from 'shared/config/Decorator/StoreDecorator';
-import {Country} from "entities/Country";
-import {Currency} from "entities/Currency";
+import {Country} from 'entities/Country';
+import {Currency} from 'entities/Currency';
 
 const meta = {
     title: 'entries/ProfileCard',
@@ -48,7 +48,7 @@ export const Dark: Story = {
     },
 };
 
-Dark.decorators = [ThemeDecorator(Theme.DARK)]
+Dark.decorators = [ThemeDecorator(Theme.DARK)];
 export const WithError: Story = {
     args: {
         error: 'true'
