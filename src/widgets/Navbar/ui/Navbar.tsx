@@ -6,6 +6,9 @@ import { LoginModal } from 'features/AuthByUsername';
 import {AppButton, ThemeButton} from 'shared/ui/AppButton/AppButton';
 import {useDispatch, useSelector} from 'react-redux';
 import {getUserAuthData, userActions} from 'entities/User';
+import {Dropdown} from 'shared/ui/Dropdown/Dropdown';
+import {Avatar} from 'shared/ui/Avatar/ui/Avatar';
+import {RoutePath} from 'shared/config/routeConfig/routeConfig';
 
 interface NavbarProps {
     className?: string
@@ -14,7 +17,6 @@ export const Navbar = memo(({className}: NavbarProps) => {
     const { t } = useTranslation();
     
     const authData = useSelector(getUserAuthData);
-    console.log(authData, 'authData');
     const dispatch = useDispatch();
 
     const [isAuthModal, setIsAuthModal] = useState(false);
@@ -34,13 +36,21 @@ export const Navbar = memo(({className}: NavbarProps) => {
     if (authData) {
         return (
             <div className={classNames(styles.Navbar, {}, [className])}>
-                <AppButton
-                    theme={ThemeButton.CLEAR}
-                    className={styles.links}
-                    onClick={onLogout}
-                >
-                    {t('Выйти')}
-                </AppButton>
+                <Dropdown
+                    className={styles.dropdown}
+                    direction='bottomLeft'
+                    items={[
+                        {
+                            content: t('Профиль'),
+                            href: RoutePath.profile,
+                        },
+                        {
+                            content: t('Выйти'),
+                            onClick: onLogout,
+                        }
+                    ]}
+                    trigger={<Avatar size={30} src={authData.avatar}/>}
+                />
             </div>
         );
     }

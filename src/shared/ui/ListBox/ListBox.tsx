@@ -4,6 +4,7 @@ import styles from './ListBox.module.scss';
 import {classNames} from 'shared/lib/classNames/classNames';
 import {AppButton} from 'shared/ui/AppButton/AppButton';
 import {HStack} from 'shared/ui/Stack';
+import {DropdownDirection} from 'shared/types/ui';
 
 export interface ListBoxItem {
     value: string;
@@ -21,8 +22,6 @@ interface ListBoxProps {
     label?: string;
 }
 
-type DropdownDirection = 'top' | 'bottom';
-
 export function ListBox(props: ListBoxProps) {
     const {
         items,
@@ -32,7 +31,7 @@ export function ListBox(props: ListBoxProps) {
         defaultValue,
         onChange,
         readonly,
-        direction = 'bottom',
+        direction = 'bottomRight',
     } = props;
 
     const optionsClasses = [styles[direction]];
