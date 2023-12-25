@@ -26,11 +26,6 @@ export const loginByUsername = createAsyncThunk<
 
             localStorage.setItem(USER_LOCAL_STORAGE_KEY, JSON.stringify(response.data));
             dispatch(userActions.setAuthData(response.data));
-
-            if (extra.navigate) {
-                extra.navigate('/profile');
-            }
-
             return response.data;
         } catch (e) {
             return rejectWithValue('Вы ввели неверный логин или пароль');
