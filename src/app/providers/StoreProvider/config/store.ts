@@ -6,6 +6,7 @@ import {createReducerManager} from './reducerManager';
 import {$api} from 'shared/api/api';
 import {To} from 'history';
 import {NavigateOptions} from 'react-router';
+import {rtkApi} from "shared/api/rtkApi";
 
 // Оборачиваем в функцию для переиспользования, например в storybook
 export function createReduxStore(
@@ -17,6 +18,7 @@ export function createReduxStore(
         ...asyncReducers,
         user: userReducer,
         ui: uiReducer,
+        [rtkApi.reducerPath]: rtkApi.reducer,
     };
 
     const reducerManager = createReducerManager(rootReducer);
@@ -33,7 +35,7 @@ export function createReduxStore(
                     navigate,
                 }
             }
-        })
+        }).concat(rtkApi.middleware)
     });
 
     // @ts-ignore

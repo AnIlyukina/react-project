@@ -12,11 +12,13 @@ import { AddCommentFormSchema } from 'features/addCommentForm';
 import {
     ArticleDetailsPageSchema,
 } from 'pages/ArticleDetailsPage';
+import { rtkApi } from 'shared/api/rtkApi';
 
 
 export interface StateSchema {
     user: UserSchema;
     ui: UISchema;
+    [rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>
 
     // Асинхронные редюсеры
     login?: LoginSchema;

@@ -38,6 +38,7 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
     const dispatch = useAppDispatch();
     const isLoading = useSelector(getArticleDetailsIsLoading) ;
     const article = useSelector(getArticleDetailsData);
+    console.log(article, 'article')
     const error = useSelector(getArticleDetailsError);
 
     const renderBlock = useCallback((block: ArticleBlock) => {
@@ -138,7 +139,9 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
     }
 
     useEffect(() => {
-        dispatch(fetchArticleById(id));
+        if (__PROJECT__ !== 'storybook') {
+            dispatch(fetchArticleById(id));
+        }
     }, [dispatch, id]);
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
