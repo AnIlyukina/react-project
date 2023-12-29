@@ -1,7 +1,6 @@
 import {UserSchema} from 'entities/User';
 import {LoginSchema} from 'features/AuthByUsername/model/types/loginSchema';
 import {AnyAction, CombinedState, EnhancedStore, Reducer, ReducersMapObject} from '@reduxjs/toolkit';
-import {ProfileScheme} from 'entities/Profile';
 import {AxiosInstance} from 'axios';
 import {To} from 'history';
 import {NavigateOptions} from 'react-router';
@@ -13,6 +12,7 @@ import {
     ArticleDetailsPageSchema,
 } from 'pages/ArticleDetailsPage';
 import { rtkApi } from 'shared/api/rtkApi';
+import {ProfileScheme} from "features/editableProfileCard";
 
 
 export interface StateSchema {

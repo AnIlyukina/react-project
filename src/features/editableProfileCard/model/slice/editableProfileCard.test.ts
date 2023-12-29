@@ -1,8 +1,8 @@
-import {ProfileScheme, ValidateProfileError} from '../types/profile';
-import {profileReducer, profileActions} from './profileSlice';
+import {profileReducer, profileActions} from './editableProfileCard';
 import {Country} from 'entities/Country';
 import {Currency} from 'entities/Currency';
-import {updateProfileData} from 'entities/Profile';
+import {ProfileScheme, ValidateProfileError} from "../types/editableProfileCardSchema";
+import {updateProfileData} from "../services/updateProfileData/updateProfileData";
 
 const data = {
     username: 'admin',
@@ -14,7 +14,7 @@ const data = {
     city: 'asas',
     currency: Currency.EUR,
 };
-describe('profileSlice.test', () => {
+describe('editableProfileCard.test', () => {
     test('test setReadonly', () => {
         const state: DeepPartial<ProfileScheme> = { readonly: false };
         expect(profileReducer(

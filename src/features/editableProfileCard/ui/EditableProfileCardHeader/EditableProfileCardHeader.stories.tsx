@@ -1,18 +1,17 @@
 import type {Meta, StoryObj} from '@storybook/react';
-import {ArticleDetailsComment} from "./ArticleDetailsComment";
+import {EditableProfileCardHeader} from "./EditableProfileCardHeader";
 
 const meta = {
-    title: 'ArticleDetailsComment',
-    component: ArticleDetailsComment,
+    title: 'EditableProfileCardHeader',
+    component: EditableProfileCardHeader,
     tags: ['autodocs'],
     argTypes: {},
-} satisfies Meta<typeof ArticleDetailsComment>;
+} satisfies Meta<typeof EditableProfileCardHeader>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
 export const Primary: Story = {
-    //@ts-ignore
     args: {},
 };
