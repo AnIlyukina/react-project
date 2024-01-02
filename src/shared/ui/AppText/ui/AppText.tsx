@@ -13,6 +13,7 @@ interface AppTextProps {
     theme?: TextTheme;
     align?: TextAlign;
     size?: TextSize;
+    'data-testid'?: string;
 }
 
 export enum TextSize {
@@ -43,19 +44,20 @@ export const AppText = memo((props: AppTextProps) => {
         text,
         theme= TextTheme.PRIMARY,
         align = TextAlign.START,
-        size = TextSize.M
+        size = TextSize.M,
+        'data-testid': dataTestId = 'AppText',
     } = props;
 
     const HeaderTag = mapSizeToHeaderTag[size];
     return (
         <div className={classNames(styles.AppText, {}, [className, styles[theme], styles[align], styles[size]])}>
             {title &&
-                <HeaderTag className={styles.title}>
+                <HeaderTag className={styles.title} data-testid={`${dataTestId}.Header`}>
                     {title}
                 </HeaderTag>
             }
             {text &&
-                <p className={styles.text}>
+                <p className={styles.text} data-testid={`${dataTestId}.Paragraph`}>
                     {text}
                 </p>
             }

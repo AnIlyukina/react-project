@@ -41,7 +41,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
     const rowCount = isBig ? articles.length : Math.ceil(articles.length / itemsPerRow);
 
     const rowRender = ({
-        index, isScrolling, key, style,
+        index, key, style,
     }: ListRowProps) => {
         const items = [];
         const fromIndex = index * itemsPerRow;
@@ -96,8 +96,8 @@ export const ArticleList = memo((props: ArticleListProps) => {
                     className={classNames(styles.ArticleList, {}, [className, styles[view]])}
                 >
                     {
-                        virtualized
-                        ? (
+                        virtualized ?
+                            (
                                 <List
                                     height={height ?? 700}
                                     rowCount={rowCount}
@@ -109,8 +109,8 @@ export const ArticleList = memo((props: ArticleListProps) => {
                                     isScrolling={isScrolling}
                                     scrollTop={scrollTop}
                                 />
-                            )
-                        : (
+                            ) :
+                            (
                                 articles.map(item => (
                                     <ArticleListItem
                                         article={item}

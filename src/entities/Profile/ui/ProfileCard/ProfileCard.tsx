@@ -71,7 +71,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
     }
 
     const mods: Mods = {
-    	[styles.editing]: !readonly
+        [styles.editing]: !readonly
     };
 
     return (
@@ -90,6 +90,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
                 className={styles.input}
                 onChange={onChangeUsername}
                 readonly={readonly}
+                data-testid='ProfileCard.username'
             />
             <AppInput
                 placeholder={t('Введите ссылку на аватар')}
@@ -97,6 +98,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
                 className={styles.input}
                 onChange={onChangeAvatar}
                 readonly={readonly}
+                data-testid='ProfileCard.avatar'
             />
             <AppInput
                 placeholder={t('Имя')}
@@ -104,6 +106,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
                 className={styles.input}
                 onChange={onChangeFirstName}
                 readonly={readonly}
+                data-testid='ProfileCard.first'
             />
             <AppInput
                 placeholder={t('Фамилия')}
@@ -111,6 +114,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
                 className={styles.input}
                 onChange={onChangeLastName}
                 readonly={readonly}
+                data-testid='ProfileCard.lastname'
             />
             <AppInput
                 placeholder={t('Ваш возраст')}
@@ -118,6 +122,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
                 className={styles.input}
                 onChange={onChangeAge}
                 readonly={readonly}
+                data-testid='ProfileCard.age'
             />
             <AppInput
                 placeholder={t('Ваш город')}
@@ -125,18 +130,21 @@ export const ProfileCard = (props: ProfileCardProps) => {
                 className={styles.input}
                 onChange={onChangeCity}
                 readonly={readonly}
+                data-testid='ProfileCard.city'
             />
             <CurrencySelect
                 className={styles.input}
                 value={profileData?.currency}
                 onChange={onChangeCurrency}
                 readonly={readonly}
+                data-testid='ProfileCard.currency'
             />
             <CountrySelect
                 className={styles.input}
                 value={profileData?.country}
                 onChange={onChangeCountry}
                 readonly={readonly}
+                data-testid='ProfileCard.country'
             />
         </VStack>
     );
