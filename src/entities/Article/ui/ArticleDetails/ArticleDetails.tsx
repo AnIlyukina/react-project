@@ -38,7 +38,6 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
     const dispatch = useAppDispatch();
     const isLoading = useSelector(getArticleDetailsIsLoading) ;
     const article = useSelector(getArticleDetailsData);
-    console.log(article, 'article')
     const error = useSelector(getArticleDetailsError);
 
     const renderBlock = useCallback((block: ArticleBlock) => {
@@ -67,7 +66,7 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
 
     if (isLoading) {
         content = (
-            <div>
+            <>
                 <Skeleton
                     className={styles.avatar}
                     width={200}
@@ -98,7 +97,7 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
                     width={'100%'}
                     height={200}
                 />
-            </div>
+            </>
         );
     } else if (error) {
         content = (
@@ -145,7 +144,7 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
     }, [dispatch, id]);
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-            <VStack gap='16' className={classNames(styles.ArticleDetails, {}, [className])}>
+            <VStack gap='16' max className={classNames(styles.ArticleDetails, {}, [className])}>
                 { content }
             </VStack>
         </DynamicModuleLoader>

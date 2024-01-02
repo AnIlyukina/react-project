@@ -21,8 +21,7 @@ export function RequireAuth(props: RequireAuthProps) {
         }
 
         return roles.some(requiredRoles => {
-            const hasRole = userRole?.includes(requiredRoles);
-            return hasRole;
+            return userRole?.includes(requiredRoles);
         });
     }, [roles, userRole]);
 
