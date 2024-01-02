@@ -4,7 +4,7 @@ import {ThemeDecorator} from 'shared/config/Decorator/ThemeDecorator';
 import {Theme} from 'app/providers/ThemeProvider';
 
 const meta = {
-    title: 'pages/AboutPage',
+    title: 'pages/AdminPanelPage',
     component: AboutPage,
     tags: ['autodocs'],
     argTypes: {
