@@ -14,7 +14,7 @@ import {
     Article, ArticleTextBlock,
 } from '../../model/types/article';
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
-import {ArticleView} from 'entities/Article';
+import {ArticleView} from '../../model/consts/consts';
 import {ArticleTypeBlock} from '../../model/consts/consts';
 
 interface ArticleListItemProps {
@@ -93,3 +93,5 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
         </AppLink>
     );
 });
+
+ArticleListItem.displayName = 'ArticleListItem';
