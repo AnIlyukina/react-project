@@ -4,7 +4,7 @@ import type {Meta, StoryObj} from '@storybook/react';
 import { EditableProfileCard } from './EditableProfileCard';
 
 const meta = {
-    title: 'features/EditableProfileCard',
+    title: 'features/EditableProfileCard/EditableProfileCard',
     component: EditableProfileCard,
     tags: ['autodocs'],
     argTypes: {},
@@ -12,9 +12,9 @@ const meta = {
 
 export default meta;
 
-type Story = StoryObj<typeof meta>;
-
-
+// type Story = StoryObj<typeof meta>;
+//
+//
 // export const Normal = Story = {
 //     args: {},
 // };

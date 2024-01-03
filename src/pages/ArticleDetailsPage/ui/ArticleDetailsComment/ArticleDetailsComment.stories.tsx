@@ -1,8 +1,9 @@
 import type {Meta, StoryObj} from '@storybook/react';
-import {ArticleDetailsComment} from "./ArticleDetailsComment";
+import {ArticleDetailsComment} from './ArticleDetailsComment';
+import {StoreDecorator} from 'shared/config/Decorator/StoreDecorator';
 
 const meta = {
-    title: 'ArticleDetailsComment',
+    title: 'pages/ArticleDetailsPage/ArticleDetailsComment',
     component: ArticleDetailsComment,
     tags: ['autodocs'],
     argTypes: {},
@@ -16,3 +17,5 @@ export const Primary: Story = {
     //@ts-ignore
     args: {},
 };
+
+Primary.decorators = [StoreDecorator({})];

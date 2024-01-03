@@ -16,7 +16,7 @@ import {getProfileReadonly} from '../../model/selectors/getProfileReadonly/getPr
 import {
     getProfileValidateErrors
 } from '../../model/selectors/getProfileValidateErrors/getProfileValidateErrors';
-import {ValidateProfileError} from '../../model/types/editableProfileCardSchema';
+import {ValidateProfileError} from '../../model/consts/consts';
 import {fetchProfileData} from '../../model/services/fetchProfileData/fetchProfileData';
 import {profileActions, profileReducer} from '../../model/slice/editableProfileCard';
 import {ProfileCard} from 'entities/Profile';

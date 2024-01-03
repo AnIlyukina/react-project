@@ -11,9 +11,11 @@ import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { AppLink } from 'shared/ui/AppLink/AppLink';
 import styles from './ArticleListItem.module.scss';
 import {
-    Article, ArticleTypeBlock, ArticleTextBlock, ArticleView,
+    Article, ArticleTextBlock,
 } from '../../model/types/article';
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
+import {ArticleView} from 'entities/Article';
+import {ArticleTypeBlock} from '../../model/consts/consts';
 
 interface ArticleListItemProps {
     className?: string;

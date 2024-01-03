@@ -16,6 +16,7 @@
     // как с обычными пакетами с помошью import (require() module.export) = common.js
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
+    "isolatedModules": true,
     // для абсолютного импорта
   },
   "ts-node": {

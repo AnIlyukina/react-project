@@ -1,8 +1,10 @@
 import {profileReducer, profileActions} from './editableProfileCard';
 import {Country} from 'entities/Country';
 import {Currency} from 'entities/Currency';
-import {ProfileScheme, ValidateProfileError} from "../types/editableProfileCardSchema";
-import {updateProfileData} from "../services/updateProfileData/updateProfileData";
+import {ProfileScheme} from '../types/editableProfileCardSchema';
+
+import {updateProfileData} from '../services/updateProfileData/updateProfileData';
+import {ValidateProfileError} from '../consts/consts';
 
 const data = {
     username: 'admin',
@@ -14,7 +16,7 @@ const data = {
     city: 'asas',
     currency: Currency.EUR,
 };
-describe('editableProfileCard.test', () => {
+describe('EditableProfileCard.test', () => {
     test('test setReadonly', () => {
         const state: DeepPartial<ProfileScheme> = { readonly: false };
         expect(profileReducer(

@@ -8,7 +8,7 @@ interface ThemeProviderProps {
     children: ReactNode
 }
 
-const ThemeProvider: FC<ThemeProviderProps> = (props) => {
+const  ThemeProvider: FC<ThemeProviderProps> = (props) => {
 
     const {
         initialTheme,

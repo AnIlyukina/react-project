@@ -5,7 +5,7 @@ import TiledIcon from 'shared/assets/icon/tiled-24-24.svg';
 import { Icon } from 'shared/ui/Icon/Icon';
 import { AppButton, ThemeButton } from 'shared/ui/AppButton/AppButton';
 import styles from './ArticleViewSelector.module.scss';
-import { ArticleView } from '../../model/types/article';
+import { ArticleView } from '../../model/consts/consts';
 
 interface ArticleViewSelectorProps {
     className?: string;

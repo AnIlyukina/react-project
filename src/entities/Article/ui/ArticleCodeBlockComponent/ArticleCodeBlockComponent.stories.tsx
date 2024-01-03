@@ -1,8 +1,9 @@
 import type {Meta, StoryObj} from '@storybook/react';
 import {ArticleCodeBlockComponent} from './ArticleCodeBlockComponent';
+import {StoreDecorator} from 'shared/config/Decorator/StoreDecorator';
 
 const meta = {
-    title: 'shared/ArticleCodeBlockComponent',
+    title: 'entries/Article/ArticleCodeBlockComponent',
     component: ArticleCodeBlockComponent,
     tags: ['autodocs'],
     argTypes: {},
@@ -16,3 +17,4 @@ export const Normal: Story = {
     // @ts-ignore
     args: {},
 };
+Normal.decorators = [StoreDecorator({})];

@@ -2,7 +2,7 @@ import type {Meta, StoryObj} from '@storybook/react';
 import {ArticleImageBlockComponent} from './ArticleImageBlockComponent';
 
 const meta = {
-    title: 'shared/ArticleImageBlockComponent',
+    title: 'entries/Article/ArticleImageBlockComponent',
     component: ArticleImageBlockComponent,
     tags: ['autodocs'],
     argTypes: {},

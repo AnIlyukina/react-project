@@ -1,8 +1,9 @@
 import type {Meta, StoryObj} from '@storybook/react';
-import {ArticleInfiniteList} from "./ArticleInfiniteList";
+import {ArticleInfiniteList} from './ArticleInfiniteList';
+import {StoreDecorator} from 'shared/config/Decorator/StoreDecorator';
 
 const meta = {
-    title: 'ArticleInfiniteList',
+    title: 'pages/ArticlesPages/ArticleInfiniteList',
     component: ArticleInfiniteList,
     tags: ['autodocs'],
     argTypes: {},
@@ -15,3 +16,5 @@ type Story = StoryObj<typeof meta>;
 export const Primary: Story = {
     args: {},
 };
+
+Primary.decorators = [StoreDecorator({})];

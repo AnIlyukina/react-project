@@ -1,23 +1,23 @@
 import {classNames} from 'shared/lib/classNames/classNames';
 import {memo, useCallback} from 'react';
-import {AppText, TextSize} from "shared/ui/AppText/ui/AppText";
-import styles from "pages/ArticleDetailsPage/ui/ArticleDetailsPage/ArticleDetailsPage.module.scss";
-import {AddCommentForm} from "features/addCommentForm";
-import {CommentList} from "entities/Comment";
-import {useDispatch, useSelector} from "react-redux";
+import {AppText, TextSize} from 'shared/ui/AppText/ui/AppText';
+import styles from 'pages/ArticleDetailsPage/ui/ArticleDetailsPage/ArticleDetailsPage.module.scss';
+import {AddCommentForm} from 'features/addCommentForm';
+import {CommentList} from 'entities/Comment';
+import {useDispatch, useSelector} from 'react-redux';
 import { addCommentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle';
 import { getArticleCommentsIsLoading } from '../../model/selectors/comments';
-import {getArticleComments} from "../../model/slices/articleDetailsCommentsSlice";
-import {useTranslation} from "react-i18next";
-import {useInitialEffect} from "shared/lib/hooks/useInitialEffect/useInitialEffect";
+import {getArticleComments} from '../../model/slices/articleDetailsCommentsSlice';
+import {useTranslation} from 'react-i18next';
+import {useInitialEffect} from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import {
     fetchCommentsByArticleId
-} from "../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId";
-import {VStack} from "shared/ui/Stack";
+} from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
+import {VStack} from 'shared/ui/Stack';
 
 interface ArticleDetailsCommentProps {
     className?: string;
-    id: string;
+    id?: string;
 }
 
 export const ArticleDetailsComment = memo((props: ArticleDetailsCommentProps) => {
@@ -56,4 +56,4 @@ export const ArticleDetailsComment = memo((props: ArticleDetailsCommentProps) =>
         </VStack>
     );
 });
-ArticleDetailsComment.displayName = 'ArticleDetailsComment'
+ArticleDetailsComment.displayName = 'ArticleDetailsComment';

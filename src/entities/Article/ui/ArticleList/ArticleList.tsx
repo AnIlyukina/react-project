@@ -7,7 +7,8 @@ import { List, ListRowProps, WindowScroller } from 'react-virtualized';
 import { PAGE_ID } from 'widgets/Page/Page';
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
 import styles from './ArticleList.module.scss';
-import { Article, ArticleView } from '../../model/types/article';
+import { Article } from '../../model/types/article';
+import {ArticleView} from '../../model/consts/consts';
 
 interface ArticleListProps {
     className?: string;
@@ -128,3 +129,5 @@ export const ArticleList = memo((props: ArticleListProps) => {
         </WindowScroller>
     );
 });
+
+ArticleList.displayName = 'ArticleList';

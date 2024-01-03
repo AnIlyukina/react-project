@@ -12,7 +12,7 @@ import {
     ArticleDetailsPageSchema,
 } from 'pages/ArticleDetailsPage';
 import { rtkApi } from 'shared/api/rtkApi';
-import {ProfileScheme} from "features/editableProfileCard";
+import {ProfileScheme} from 'features/EditableProfileCard';
 
 
 export interface StateSchema {
