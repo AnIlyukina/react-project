@@ -1,4 +1,26 @@
 {
+  "notifications": [
+    {
+      "id": 1,
+      "title": "Уведомление 1",
+      "descriptions": "Произошла ошибка",
+      "userId": "1"
+    },
+    {
+      "id": 2,
+      "title": "Уведомление 2",
+      "descriptions": "Произошла событие",
+      "userId": "1",
+      "href": "https://localhost:3010/admin"
+    },
+    {
+      "id": 3,
+      "title": "Уведомление 3",
+      "descriptions": "Произошла ошибка",
+      "userId": "1",
+      "href": "https://localhost:3010/admin"
+    }
+  ],
   "posts": [
     {
       "id": "1",
@@ -698,7 +720,7 @@
       "lastname": "asf",
       "age": 465,
       "currency": "EUR",
-      "country": "Ukraine",
+      "country": "Belarus",
       "city": "Moscow",
       "username": "ulbi tv",
       "avatar": "https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg"

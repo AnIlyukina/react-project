@@ -3,7 +3,7 @@ import {Dropdown} from './Dropdown';
 import {AppButton} from 'shared/ui/AppButton/AppButton';
 
 const meta = {
-    title: 'shared/Dropdown',
+    title: 'shared/Popups/Dropdown',
     component: Dropdown,
     tags: ['autodocs'],
     argTypes: {},

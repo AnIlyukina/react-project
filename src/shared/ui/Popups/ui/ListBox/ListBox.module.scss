@@ -14,34 +14,10 @@
     z-index: 10000;
     border-radius: 12px;
     box-shadow: 4px 4px 8px var(--listbox-bg);
-
-    &.bottomLeft {
-        top: 100%;
-        right: 0;
-    }
-
-    &.bottomRight {
-        top: 100%;
-        left: 0;
-    }
-
-    &.topRight {
-        bottom: 100%;
-        left: 0;
-    }
-
-    &.topLeft {
-        bottom: 100%;
-        right: 0;
-    }
 }
 
 .item {
     padding: 5px 20px;
-}
-
-.active {
-    background: var(--inverted-bg-color);
 }
 
 .disabled {
