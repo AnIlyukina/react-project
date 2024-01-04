@@ -2,6 +2,7 @@ import {classNames, Mods} from 'shared/lib/classNames/classNames';
 import styles from './Modal.module.scss';
 import React, {ReactNode, useCallback, useEffect, useRef, useState} from 'react';
 import {Portal} from 'shared/ui/Portal/Portal';
+import {Overlay} from 'shared/ui/Overlay/Overlay';
 
 interface ModalProps {
     className?: string,
@@ -35,10 +36,6 @@ export const Modal = (props: ModalProps) => {
             }, ANIMATION_DELAY);
         }
     }, [onClose]);
-
-    const onContentClick = (e: React.MouseEvent) => {
-        e.stopPropagation();
-    };
 
     const onKeyDown = useCallback((e: KeyboardEvent) => {
         if (e.key === 'Escape') {
@@ -75,11 +72,9 @@ export const Modal = (props: ModalProps) => {
     return (
         <Portal>
             <div className={classNames(styles.Modal, mods, [className])}>
-                <div className={styles.overlay} onClick={closeHandler}>
-                    <div className={styles.content} onClick={onContentClick}>
-                        {children}
-                    </div>
-
+                <Overlay onClick={closeHandler}/>
+                <div className={styles.content}>
+                    {children}
                 </div>
             </div>
         </Portal>

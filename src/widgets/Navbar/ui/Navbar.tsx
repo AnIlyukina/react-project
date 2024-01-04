@@ -12,6 +12,8 @@ import {RoutePath} from 'shared/config/routeConfig/routeConfig';
 import {HStack} from 'shared/ui/Stack';
 import {NotificationButton} from 'features/NotificationButton';
 import {AvatarDropdown} from 'features/AvatarDropdown';
+import {Drawer} from 'shared/ui/Drawer/Drawer';
+import {NotificationList} from 'entities/Notification';
 
 interface NavbarProps {
     className?: string
@@ -30,8 +32,6 @@ export const Navbar = memo(({className}: NavbarProps) => {
     const onShowModal = useCallback(() => {
         setIsAuthModal(true);
     }, []);
-
-
 
     if (authData) {
         return (
