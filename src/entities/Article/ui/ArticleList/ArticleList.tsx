@@ -3,7 +3,6 @@ import {useTranslation} from 'react-i18next';
 import {HTMLAttributeAnchorTarget, memo} from 'react';
 import {ArticleListItemSkeleton} from '@/entities/Article/ui/ArticleListItem/ArticleListItemSkeleton';
 import {AppText, TextSize} from '@/shared/ui/AppText/ui/AppText';
-import {PAGE_ID} from '@/widgets/Page/Page';
 import {ArticleListItem} from '../ArticleListItem/ArticleListItem';
 import styles from './ArticleList.module.scss';
 import {Article} from '../../model/types/article';

@@ -1,9 +1,9 @@
 import {classNames} from '@/shared/lib/classNames/classNames';
 import styles from './Drawer.module.scss';
-import {memo, ReactNode, useCallback, useEffect} from 'react';
+import { ReactNode, useCallback, useEffect} from 'react';
 import {Portal} from '../Portal/Portal';
 import {Overlay} from '../Overlay/Overlay';
-import {useAnimationLibs} from '@/shared/lib/components/AnimationProvider';
+import {AnimationProvider, useAnimationLibs} from '@/shared/lib/components/AnimationProvider';
 
 interface DrawerProps {
     className?: string;
@@ -14,7 +14,7 @@ interface DrawerProps {
 }
 
 const height = window.innerHeight - 100;
-export const DrawerContent = (props: DrawerProps) => {
+const DrawerContent = (props: DrawerProps) => {
     const {
         className,
         children,
@@ -87,7 +87,7 @@ export const DrawerContent = (props: DrawerProps) => {
     );
 };
 
-export const Drawer = memo((props: DrawerProps) => {
+const DrawerAsync = (props: DrawerProps) => {
     const { isLoaded } = useAnimationLibs();
 
     if (!isLoaded) {
@@ -95,6 +95,16 @@ export const Drawer = memo((props: DrawerProps) => {
     }
 
     return <DrawerContent {...props}/>;
-});
+};
+
+export const Drawer = (props: DrawerProps) => {
+
+    return (
+        <AnimationProvider>
+            <DrawerAsync {...props}/>
+        </AnimationProvider>
+    );
+};
+
 
 Drawer.displayName = 'Drawer';
