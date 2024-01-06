@@ -1,17 +1,16 @@
-import {classNames} from 'shared/lib/classNames/classNames';
+import {classNames} from '@/shared/lib/classNames/classNames';
 import styles from './ArticlesPage.module.scss';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
-import {useTranslation} from 'react-i18next';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useSearchParams } from 'react-router-dom';
 import {memo, useCallback} from 'react';
-import {DynamicModuleLoader, ReducerList} from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import {DynamicModuleLoader, ReducerList} from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage';
-import { ArticlesPageFilters } from 'pages/ArticlesPage/ui/ArticlesPageFilters/ArticlesPageFilters';
-import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
+import { ArticlesPageFilters } from '@/pages/ArticlesPage/ui/ArticlesPageFilters/ArticlesPageFilters';
+import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { articlesPageReducer } from '../../model/slices/articlesPageSlice';
 import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage';
-import { Page } from 'widgets/Page/Page';
-import {ArticleInfiniteList} from "pages/ArticlesPage/ui/ArticleInfiniteList/ArticleInfiniteList";
+import { Page } from '@/widgets/Page/Page';
+import {ArticleInfiniteList} from '@/pages/ArticlesPage/ui/ArticleInfiniteList/ArticleInfiniteList';
 
 interface ArticlesPageProps {
 	className?: string
@@ -23,7 +22,6 @@ const reducers: ReducerList = {
 
 const ArticlesPage = (props: ArticlesPageProps) => {
     const { className } = props;
-    const { t } = useTranslation();
     const dispatch = useAppDispatch();
     const [searchParams] = useSearchParams();
 

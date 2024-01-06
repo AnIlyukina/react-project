@@ -1,18 +1,18 @@
-import {UserSchema} from 'entities/User';
-import {LoginSchema} from 'features/AuthByUsername/model/types/loginSchema';
+import {UserSchema} from '@/entities/User';
+import {LoginSchema} from '@/features/AuthByUsername/model/types/loginSchema';
 import {AnyAction, CombinedState, EnhancedStore, Reducer, ReducersMapObject} from '@reduxjs/toolkit';
 import {AxiosInstance} from 'axios';
 import {To} from 'history';
 import {NavigateOptions} from 'react-router';
-import {ArticleDetailsSchema} from 'entities/Article';
-import { ArticlesPageSchema } from 'pages/ArticlesPage';
-import { UISchema } from 'features/UI';
-import { AddCommentFormSchema } from 'features/addCommentForm';
+import {ArticleDetailsSchema} from '@/entities/Article';
+import { ArticlesPageSchema } from '@/pages/ArticlesPage';
+import { UISchema } from '@/features/UI';
+import { AddCommentFormSchema } from '@/features/addCommentForm';
 import {
     ArticleDetailsPageSchema,
-} from 'pages/ArticleDetailsPage';
-import { rtkApi } from 'shared/api/rtkApi';
-import {ProfileScheme} from 'features/EditableProfileCard';
+} from '@/pages/ArticleDetailsPage';
+import { rtkApi } from '@/shared/api/rtkApi';
+import {ProfileScheme} from '@/features/EditableProfileCard';
 
 
 export interface StateSchema {

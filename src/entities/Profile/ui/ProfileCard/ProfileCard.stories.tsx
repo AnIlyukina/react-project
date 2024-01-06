@@ -1,10 +1,9 @@
 import type {Meta, StoryObj} from '@storybook/react';
 import { ProfileCard } from './ProfileCard';
-import {ThemeDecorator} from 'shared/config/Decorator/ThemeDecorator';
-import {Theme} from 'app/providers/ThemeProvider';
-import {StoreDecorator} from 'shared/config/Decorator/StoreDecorator';
-import {Country} from 'entities/Country';
-import {Currency} from 'entities/Currency';
+import {ThemeDecorator} from '@/shared/config/Decorator/ThemeDecorator';
+import {Theme} from '@/app/providers/ThemeProvider';
+import {Country} from '@/entities/Country';
+import {Currency} from '@/entities/Currency';
 
 const meta = {
     title: 'entries/ProfileCard',

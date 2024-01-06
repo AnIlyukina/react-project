@@ -1,11 +1,11 @@
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import styles from './ArticleRecommendationsList.module.scss';
 import { memo } from 'react';
-import {AppText, TextSize} from "shared/ui/AppText/ui/AppText";
-import {ArticleList} from "entities/Article";
-import {VStack} from "shared/ui/Stack";
-import {useArticleRecommendationsList} from "../../api/articleRecommendationsApi";
+import {AppText, TextSize} from '@/shared/ui/AppText/ui/AppText';
+import {ArticleList} from '@/entities/Article';
+import {VStack} from '@/shared/ui/Stack';
+import {useArticleRecommendationsList} from '../../api/articleRecommendationsApi';
 
 interface ArticleRecommendationsListProps {
     className?: string;
@@ -17,7 +17,7 @@ export const ArticleRecommendationsList = memo((props: ArticleRecommendationsLis
     const { data: recommendations, isLoading, error } = useArticleRecommendationsList(3);
 
     if (isLoading || error || !recommendations) {
-        return null
+        return null;
     }
 
     return (
@@ -29,7 +29,6 @@ export const ArticleRecommendationsList = memo((props: ArticleRecommendationsLis
             <ArticleList
                 articles={recommendations}
                 target="_blank"
-                virtualized={false}
             />
         </VStack>
     );

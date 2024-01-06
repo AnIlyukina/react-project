@@ -1,6 +1,6 @@
 import {profileReducer, profileActions} from './editableProfileCard';
-import {Country} from 'entities/Country';
-import {Currency} from 'entities/Currency';
+import {Country} from '@/entities/Country';
+import {Currency} from '@/entities/Currency';
 import {ProfileScheme} from '../types/editableProfileCardSchema';
 
 import {updateProfileData} from '../services/updateProfileData/updateProfileData';

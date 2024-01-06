@@ -1,9 +1,9 @@
-import {classNames} from 'shared/lib/classNames/classNames';
+import {classNames} from '@/shared/lib/classNames/classNames';
 import styles from './Drawer.module.scss';
 import {memo, ReactNode, useCallback, useEffect} from 'react';
 import {Portal} from '../Portal/Portal';
 import {Overlay} from '../Overlay/Overlay';
-import {useAnimationLibs} from 'shared/lib/components/AnimationProvider';
+import {useAnimationLibs} from '@/shared/lib/components/AnimationProvider';
 
 interface DrawerProps {
     className?: string;
@@ -20,7 +20,6 @@ export const DrawerContent = (props: DrawerProps) => {
         children,
         isOpen,
         onClose,
-        lazy,
     } = props;
 
     const { Spring, Gesture } = useAnimationLibs();

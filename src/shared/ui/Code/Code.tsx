@@ -1,7 +1,7 @@
-import {classNames} from 'shared/lib/classNames/classNames';
+import {classNames} from '@/shared/lib/classNames/classNames';
 import styles from './Code.module.scss';
 import {memo} from 'react';
-import {AppButton} from 'shared/ui/AppButton/AppButton';
+import {AppButton} from '@/shared/ui/AppButton/AppButton';
 import {useTranslation} from 'react-i18next';
 interface CodeProps {
     className?: string;

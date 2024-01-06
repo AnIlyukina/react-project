@@ -1,8 +1,8 @@
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import { memo } from 'react';
-import { AppText } from 'shared/ui/AppText/ui/AppText';
+import { AppText } from '@/shared/ui/AppText/ui/AppText';
 import { useTranslation } from 'react-i18next';
-import { VStack } from 'shared/ui/Stack';
+import { VStack } from '@/shared/ui/Stack';
 import { CommentCard } from '../CommentCard/CommentCard';
 import { Comment } from '../../model/types/comment';
 
@@ -40,3 +40,6 @@ export const CommentList = memo((props: CommentListProps) => {
         </VStack>
     );
 });
+
+
+CommentList.displayName = 'CommentList';

@@ -1,9 +1,9 @@
 import { Story } from '@storybook/react';
-import { StateSchema, StoreProvider } from 'app/providers/StoreProvider';
-import { loginReducer } from 'features/AuthByUsername/model/slice/loginSlice';
-import { ReducerList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { StateSchema, StoreProvider } from '@/app/providers/StoreProvider';
+import { loginReducer } from '@/features/AuthByUsername/model/slice/loginSlice';
+import { ReducerList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import {ReducersMapObject} from '@reduxjs/toolkit';
-import {profileReducer} from 'features/EditableProfileCard/model/slice/editableProfileCard';
+import {profileReducer} from '@/features/EditableProfileCard/model/slice/editableProfileCard';
 
 const defaultAsyncReducers: ReducerList = {
     login: loginReducer,

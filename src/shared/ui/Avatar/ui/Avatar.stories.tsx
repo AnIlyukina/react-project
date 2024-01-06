@@ -20,7 +20,7 @@ export const Primary: Story = {
     },
 };
 
-export const small: Story = {
+export const Small: Story = {
     args: {
         src: 'https://shablon.pechenek.net/wp-content/uploads/avatarka_swordgirl.jpg',
         size: 50,

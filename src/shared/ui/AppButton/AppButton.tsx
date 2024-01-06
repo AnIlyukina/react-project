@@ -1,4 +1,4 @@
-import {classNames, Mods} from 'shared/lib/classNames/classNames';
+import {classNames, Mods} from '@/shared/lib/classNames/classNames';
 import styles from './AppButton.module.scss';
 import {ButtonHTMLAttributes, memo, ReactNode} from 'react';
 

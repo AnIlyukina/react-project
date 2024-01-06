@@ -1,12 +1,12 @@
 import {CombinedState, configureStore, ReducersMapObject} from '@reduxjs/toolkit';
 import {StateSchema} from './StateSchema';
-import { userReducer } from 'entities/User';
-import { uiReducer } from 'features/UI';
+import { userReducer } from '@/entities/User';
+import { uiReducer } from '@/features/UI';
 import {createReducerManager} from './reducerManager';
-import {$api} from 'shared/api/api';
+import {$api} from '@/shared/api/api';
 import {To} from 'history';
 import {NavigateOptions} from 'react-router';
-import {rtkApi} from "shared/api/rtkApi";
+import {rtkApi} from '@/shared/api/rtkApi';
 
 // Оборачиваем в функцию для переиспользования, например в storybook
 export function createReduxStore(

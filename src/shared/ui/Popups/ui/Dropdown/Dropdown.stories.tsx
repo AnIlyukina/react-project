@@ -1,6 +1,6 @@
 import type {Meta, StoryObj} from '@storybook/react';
 import {Dropdown} from './Dropdown';
-import {AppButton} from 'shared/ui/AppButton/AppButton';
+import {AppButton} from '@/shared/ui/AppButton/AppButton';
 
 const meta = {
     title: 'shared/Popups/Dropdown',

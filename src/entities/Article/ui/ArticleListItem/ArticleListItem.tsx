@@ -1,14 +1,14 @@
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { HTMLAttributeAnchorTarget, memo } from 'react';
-import { AppText } from 'shared/ui/AppText/ui/AppText';
-import { Icon } from 'shared/ui/Icon/Icon';
-import EyeIcon from 'shared/assets/icon/eye-20-20.svg';
-import { Card } from 'shared/ui/Card/Card';
-import { Avatar } from 'shared/ui/Avatar/ui/Avatar';
-import { AppButton, ThemeButton } from 'shared/ui/AppButton/AppButton';
-import { RoutePath } from 'shared/config/routeConfig/routeConfig';
-import { AppLink } from 'shared/ui/AppLink/AppLink';
+import { AppText } from '@/shared/ui/AppText/ui/AppText';
+import { Icon } from '@/shared/ui/Icon/Icon';
+import EyeIcon from '@/shared/assets/icon/eye-20-20.svg';
+import { Card } from '@/shared/ui/Card/Card';
+import { Avatar } from '@/shared/ui/Avatar/ui/Avatar';
+import { AppButton, ThemeButton } from '@/shared/ui/AppButton/AppButton';
+import { RoutePath } from '@/shared/config/routeConfig/routeConfig';
+import { AppLink } from '@/shared/ui/AppLink/AppLink';
 import styles from './ArticleListItem.module.scss';
 import {
     Article, ArticleTextBlock,

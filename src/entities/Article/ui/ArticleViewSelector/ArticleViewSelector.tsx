@@ -1,9 +1,9 @@
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import { memo } from 'react';
-import ListIcon from 'shared/assets/icon/list-24-24.svg';
-import TiledIcon from 'shared/assets/icon/tiled-24-24.svg';
-import { Icon } from 'shared/ui/Icon/Icon';
-import { AppButton, ThemeButton } from 'shared/ui/AppButton/AppButton';
+import ListIcon from '@/shared/assets/icon/list-24-24.svg';
+import TiledIcon from '@/shared/assets/icon/tiled-24-24.svg';
+import { Icon } from '@/shared/ui/Icon/Icon';
+import { AppButton, ThemeButton } from '@/shared/ui/AppButton/AppButton';
 import styles from './ArticleViewSelector.module.scss';
 import { ArticleView } from '../../model/consts/consts';
 
@@ -48,3 +48,5 @@ export const ArticleViewSelector = memo((props: ArticleViewSelectorProps) => {
         </div>
     );
 });
+
+ArticleViewSelector.displayName = 'ArticleViewSelector';
