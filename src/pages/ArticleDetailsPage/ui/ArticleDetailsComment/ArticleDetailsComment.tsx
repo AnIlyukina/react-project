@@ -17,7 +17,7 @@ import {VStack} from '@/shared/ui/Stack';
 
 interface ArticleDetailsCommentProps {
     className?: string;
-    id?: string;
+    id: string;
 }
 
 export const ArticleDetailsComment = memo((props: ArticleDetailsCommentProps) => {
