@@ -2,7 +2,7 @@ import type {Meta, StoryObj} from '@storybook/react';
 import { CurrencySelect } from './CurrencySelect';
 
 const meta = {
-    title: 'entries/CurrencySelect',
+    title: 'entities/CurrencySelect',
     component: CurrencySelect,
     tags: ['autodocs'],
     argTypes: {

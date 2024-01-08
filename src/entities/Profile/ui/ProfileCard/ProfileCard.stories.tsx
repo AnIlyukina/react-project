@@ -6,7 +6,7 @@ import {Country} from '@/entities/Country';
 import {Currency} from '@/entities/Currency';
 
 const meta = {
-    title: 'entries/ProfileCard',
+    title: 'entities/ProfileCard',
     component: ProfileCard,
     tags: ['autodocs'],
     argTypes: {

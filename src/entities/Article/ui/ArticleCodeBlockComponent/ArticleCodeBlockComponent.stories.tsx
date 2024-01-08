@@ -3,7 +3,7 @@ import {ArticleCodeBlockComponent} from './ArticleCodeBlockComponent';
 import {StoreDecorator} from '@/shared/config/Decorator/StoreDecorator';
 
 const meta = {
-    title: 'entries/Article/ArticleCodeBlockComponent',
+    title: 'entities/Article/ArticleCodeBlockComponent',
     component: ArticleCodeBlockComponent,
     tags: ['autodocs'],
     argTypes: {},
