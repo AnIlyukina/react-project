@@ -79,6 +79,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
             {profileData?.avatar && (
                 <HStack justify='center' max>
                     <Avatar
+                        size={180}
                         src={profileData?.avatar}
                         alt='аватар пользователя'
                     />

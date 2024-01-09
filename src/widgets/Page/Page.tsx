@@ -11,8 +11,9 @@ import { useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { StateSchema } from '@/app/providers/StoreProvider';
 import cls from './Page.module.scss';
+import {TestProps} from "@/shared/types/tests";
 
-interface PageProps {
+interface PageProps extends TestProps{
     className?: string;
     children: ReactNode;
     onScrollEnd?: () => void;
@@ -52,6 +53,7 @@ export const Page = memo((props: PageProps) => {
             ref={wrapperRef}
             className={classNames(cls.Page, {}, [className])}
             onScroll={onScroll}
+            data-testid={props['data-testid'] ?? 'Page'}
             id={PAGE_ID}
         >
             {children}

@@ -1,6 +1,10 @@
 import {classNames} from '@/shared/lib/classNames/classNames';
 import styles from './Avatar.module.scss';
 import {CSSProperties, useMemo} from 'react';
+import {AppImage} from "../../AppImage/AppImage";
+import Profile from '../../../assets/icon/profile-page.svg';
+import {Icon} from "@/shared/ui/Icon/Icon";
+import {Skeleton} from "@/shared/ui/Skeleton/Skeleton";
 
 interface AvatarProps {
     className?: string,
@@ -23,9 +27,14 @@ export const Avatar = (props: AvatarProps) => {
             height: size,
         };
     }, [size]);
-    
+
+    const fallback = <Skeleton width={size} height={size} border='50%'/>
+    const errorFallback = <Icon width={size} height={size} Svg={Profile}/>
+
     return (
-        <img
+        <AppImage
+            errorFallback={errorFallback}
+            fallback={fallback}
             alt={alt}
             src={src}
             style={sizeStile}

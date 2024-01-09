@@ -1,12 +1,12 @@
 import {classNames} from '@/shared/lib/classNames/classNames';
 import styles from './AvatarDropdown.module.scss';
 import {useTranslation} from 'react-i18next';
-import {RoutePath} from '@/shared/config/routeConfig/routeConfig';
 import {Avatar} from '@/shared/ui/Avatar/ui/Avatar';
 import {Dropdown} from '@/shared/ui/Popups';
 import React, {useCallback} from 'react';
 import {getUserAuthData, isUserAdmin, isUserManager, userActions} from '@/entities/User';
 import {useDispatch, useSelector} from 'react-redux';
+import {getRouteAdmin, getRouteProfile} from "@/shared/const/router";
 
 interface AvatarDropdownProps {
     className?: string
@@ -38,11 +38,11 @@ export const AvatarDropdown = ({className}: AvatarDropdownProps) => {
                 items={[
                     ...(isAdminPanelAvailable ? [{
                         content: t('Админка'),
-                        href: RoutePath.admin_panel,
+                        href: getRouteAdmin(),
                     }] : []),
                     {
                         content: t('Профиль'),
-                        href: RoutePath.profile,
+                        href: getRouteProfile(authData.id),
                     },
                     {
                         content: t('Выйти'),
