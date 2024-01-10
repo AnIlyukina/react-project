@@ -1,5 +1,5 @@
-import type {Meta, StoryObj} from '@storybook/react';
-import {ArticleDetails} from './ArticleDetails';
+import type { Meta, StoryObj } from '@storybook/react';
+import { ArticleDetails } from './ArticleDetails';
 
 const meta = {
     title: 'entities/Article/ArticleDetails',
@@ -14,6 +14,6 @@ type Story = StoryObj<typeof meta>;
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
 export const Normal: Story = {
     args: {
-        id: '1'
+        id: '1',
     },
 };

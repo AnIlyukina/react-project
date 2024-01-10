@@ -1,17 +1,15 @@
-import type {Meta, StoryObj} from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import { ProfileCard } from './ProfileCard';
-import {ThemeDecorator} from '@/shared/config/Decorator/ThemeDecorator';
-import {Theme} from '@/app/providers/ThemeProvider';
-import {Country} from '@/entities/Country';
-import {Currency} from '@/entities/Currency';
+import { ThemeDecorator } from '@/shared/config/Decorator/ThemeDecorator';
+import { Theme } from '@/app/providers/ThemeProvider';
+import { Country } from '@/entities/Country';
+import { Currency } from '@/entities/Currency';
 
 const meta = {
     title: 'entities/ProfileCard',
     component: ProfileCard,
     tags: ['autodocs'],
-    argTypes: {
-    },
-
+    argTypes: {},
 } satisfies Meta<typeof ProfileCard>;
 
 export default meta;
@@ -28,8 +26,8 @@ export const Primary: Story = {
             first: 'SA',
             lastname: 'sdfji',
             city: 'asas',
-            currency: Currency.EUR
-        }
+            currency: Currency.EUR,
+        },
     },
 };
 export const Dark: Story = {
@@ -42,24 +40,20 @@ export const Dark: Story = {
             first: 'SA',
             lastname: 'sdfji',
             city: 'asas',
-            currency: Currency.EUR
-        }
+            currency: Currency.EUR,
+        },
     },
 };
 
 Dark.decorators = [ThemeDecorator(Theme.DARK)];
 export const WithError: Story = {
     args: {
-        error: 'true'
+        error: 'true',
     },
 };
-
 
 export const Loading: Story = {
     args: {
-        isLoading: true
+        isLoading: true,
     },
 };
-
-
-

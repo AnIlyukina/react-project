@@ -1,6 +1,6 @@
-import {classNames} from '@/shared/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import styles from './AppText.module.scss';
-import {memo} from 'react';
+import { memo } from 'react';
 
 export enum TextTheme {
     PRIMARY = 'primary',
@@ -37,12 +37,11 @@ const mapSizeToHeaderTag: Record<TextSize, HeaderTagType> = {
 };
 
 export const AppText = memo((props: AppTextProps) => {
-
     const {
         className,
         title,
         text,
-        theme= TextTheme.PRIMARY,
+        theme = TextTheme.PRIMARY,
         align = TextAlign.START,
         size = TextSize.M,
         'data-testid': dataTestId = 'AppText',
@@ -50,17 +49,30 @@ export const AppText = memo((props: AppTextProps) => {
 
     const HeaderTag = mapSizeToHeaderTag[size];
     return (
-        <div className={classNames(styles.AppText, {}, [className, styles[theme], styles[align], styles[size]])}>
-            {title &&
-                <HeaderTag className={styles.title} data-testid={`${dataTestId}.Header`}>
+        <div
+            className={classNames(styles.AppText, {}, [
+                className,
+                styles[theme],
+                styles[align],
+                styles[size],
+            ])}
+        >
+            {title && (
+                <HeaderTag
+                    className={styles.title}
+                    data-testid={`${dataTestId}.Header`}
+                >
                     {title}
                 </HeaderTag>
-            }
-            {text &&
-                <p className={styles.text} data-testid={`${dataTestId}.Paragraph`}>
+            )}
+            {text && (
+                <p
+                    className={styles.text}
+                    data-testid={`${dataTestId}.Paragraph`}
+                >
                     {text}
                 </p>
-            }
+            )}
         </div>
     );
 });

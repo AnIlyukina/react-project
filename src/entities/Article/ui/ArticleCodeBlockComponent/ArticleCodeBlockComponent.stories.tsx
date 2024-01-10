@@ -1,6 +1,6 @@
-import type {Meta, StoryObj} from '@storybook/react';
-import {ArticleCodeBlockComponent} from './ArticleCodeBlockComponent';
-import {StoreDecorator} from '@/shared/config/Decorator/StoreDecorator';
+import type { Meta, StoryObj } from '@storybook/react';
+import { ArticleCodeBlockComponent } from './ArticleCodeBlockComponent';
+import { StoreDecorator } from '@/shared/config/Decorator/StoreDecorator';
 
 const meta = {
     title: 'entities/Article/ArticleCodeBlockComponent',

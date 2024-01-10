@@ -1,5 +1,3 @@
-import {AboutPagesAsync} from './ui/AboutPages.async';
+import { AboutPagesAsync } from './ui/AboutPages.async';
 
-export {
-    AboutPagesAsync as AboutPage
-};
+export { AboutPagesAsync as AboutPage };

@@ -1,13 +1,12 @@
-import {classNames} from '@/shared/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import styles from './PageError.module.scss';
-import {useTranslation} from 'react-i18next';
-import {AppButton} from '@/shared/ui/AppButton/AppButton';
+import { useTranslation } from 'react-i18next';
+import { AppButton } from '@/shared/ui/AppButton/AppButton';
 
 interface ErrorPageProps {
-    className?: string
+    className?: string;
 }
-export const PageError = ({className}: ErrorPageProps) => {
-
+export const PageError = ({ className }: ErrorPageProps) => {
     const { t } = useTranslation();
 
     const reloadPage = () => {
@@ -17,9 +16,7 @@ export const PageError = ({className}: ErrorPageProps) => {
     return (
         <div className={classNames(styles.ErrorPage, {}, [className])}>
             <p>{t('Произошла непредвиенная ошибка')}</p>
-            <AppButton onClick={reloadPage}>
-                {t('Обновить страницу')}
-            </AppButton>
+            <AppButton onClick={reloadPage}>{t('Обновить страницу')}</AppButton>
         </div>
     );
 };

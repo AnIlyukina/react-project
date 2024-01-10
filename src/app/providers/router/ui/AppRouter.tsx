@@ -1,36 +1,31 @@
-import React, {memo, Suspense, useCallback} from 'react';
-import {Route, Routes} from 'react-router-dom';
-import { AppRoutesProps, routeConfig} from '@/app/providers/router/config/routeConfig';
-import {PageLoader} from '@/widgets/PageLoader/PageLoader';
-import {RequireAuth} from '@/app/providers/router/ui/RequireAuth';
+import React, { memo, Suspense, useCallback } from 'react';
+import { Route, Routes } from 'react-router-dom';
+import { routeConfig } from '@/app/providers/router/config/routeConfig';
+import { PageLoader } from '@/widgets/PageLoader/PageLoader';
+import { RequireAuth } from '@/app/providers/router/ui/RequireAuth';
+import { AppRoutesProps } from '@/shared/types/router';
 
 const AppRouter = () => {
-
     const renderWithWrapper = useCallback((route: AppRoutesProps) => {
-
         const element = (
-            <div className='page-wrapper'>
-                {route.element}
-            </div>
+            <Suspense fallback={<PageLoader />}>{route.element}</Suspense>
         );
         return (
             <Route
                 key={route.path}
                 path={route.path}
-                element={route.authOnly ? <RequireAuth roles={route.roles}>{element}</RequireAuth> : element}
+                element={
+                    route.authOnly ? (
+                        <RequireAuth roles={route.roles}>{element}</RequireAuth>
+                    ) : (
+                        element
+                    )
+                }
             />
         );
     }, []);
 
-    return (
-        <Suspense fallback={<PageLoader/>}>
-            <Routes>
-                {
-                    Object.values(routeConfig).map(renderWithWrapper)
-                }
-            </Routes>
-        </Suspense>
-    );
+    return <Routes>{Object.values(routeConfig).map(renderWithWrapper)}</Routes>;
 };
 
 export default memo(AppRouter);

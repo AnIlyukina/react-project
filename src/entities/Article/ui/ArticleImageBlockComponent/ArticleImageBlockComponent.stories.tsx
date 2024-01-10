@@ -1,5 +1,5 @@
-import type {Meta, StoryObj} from '@storybook/react';
-import {ArticleImageBlockComponent} from './ArticleImageBlockComponent';
+import type { Meta, StoryObj } from '@storybook/react';
+import { ArticleImageBlockComponent } from './ArticleImageBlockComponent';
 
 const meta = {
     title: 'entities/Article/ArticleImageBlockComponent',

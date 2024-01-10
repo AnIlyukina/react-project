@@ -1,14 +1,13 @@
-import type {Meta, StoryObj} from '@storybook/react';
-import {AppText, TextSize, TextTheme} from './AppText';
-import {ThemeDecorator} from '@/shared/config/Decorator/ThemeDecorator';
-import {Theme} from '@/app/providers/ThemeProvider';
+import type { Meta, StoryObj } from '@storybook/react';
+import { AppText, TextSize, TextTheme } from './AppText';
+import { ThemeDecorator } from '@/shared/config/Decorator/ThemeDecorator';
+import { Theme } from '@/app/providers/ThemeProvider';
 
 const meta = {
     title: 'shared/AppText',
     component: AppText,
     tags: ['autodocs'],
-    argTypes: {
-    },
+    argTypes: {},
 } satisfies Meta<typeof AppText>;
 
 export default meta;
@@ -18,7 +17,7 @@ type Story = StoryObj<typeof meta>;
 export const TextPrimary: Story = {
     args: {
         text: 'Text',
-        title: 'Title'
+        title: 'Title',
     },
 };
 
@@ -26,13 +25,13 @@ export const TextError: Story = {
     args: {
         text: 'Text',
         title: 'Title',
-        theme: TextTheme.ERROR
+        theme: TextTheme.ERROR,
     },
 };
 
 export const OnlyTitle: Story = {
     args: {
-        title: 'Title'
+        title: 'Title',
     },
 };
 
@@ -45,7 +44,7 @@ export const OnlyText: Story = {
 export const TextDark: Story = {
     args: {
         text: 'Text',
-        title: 'Title'
+        title: 'Title',
     },
 };
 
@@ -53,7 +52,7 @@ TextDark.decorators = [ThemeDecorator(Theme.DARK)];
 
 export const OnlyTitleDark: Story = {
     args: {
-        title: 'Title'
+        title: 'Title',
     },
 };
 OnlyTitleDark.decorators = [ThemeDecorator(Theme.DARK)];
@@ -65,12 +64,11 @@ export const OnlyTextDark: Story = {
 };
 OnlyTextDark.decorators = [ThemeDecorator(Theme.DARK)];
 
-
 export const SizeL: Story = {
     args: {
         text: 'Text',
         title: 'Title dvdvdv dvdvdv dvdv',
-        size: TextSize.L
+        size: TextSize.L,
     },
 };
 
@@ -78,7 +76,7 @@ export const SizeM: Story = {
     args: {
         text: 'Text',
         title: 'Title dvdvdv dvdvdv dvdv',
-        size: TextSize.M
+        size: TextSize.M,
     },
 };
 
@@ -86,6 +84,6 @@ export const SizeS: Story = {
     args: {
         text: 'Text',
         title: 'Title dvdvdv dvdvdv dvdv',
-        size: TextSize.S
+        size: TextSize.S,
     },
 };

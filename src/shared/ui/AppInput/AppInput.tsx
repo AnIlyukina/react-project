@@ -1,16 +1,25 @@
-import {classNames, Mods} from '@/shared/lib/classNames/classNames';
+import { classNames, Mods } from '@/shared/lib/classNames/classNames';
 import styles from './AppInput.module.scss';
-import React, {InputHTMLAttributes, memo, useEffect, useRef, useState} from 'react';
+import React, {
+    InputHTMLAttributes,
+    memo,
+    useEffect,
+    useRef,
+    useState,
+} from 'react';
 
-type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange' | 'readOnly'>
+type HTMLInputProps = Omit<
+    InputHTMLAttributes<HTMLInputElement>,
+    'value' | 'onChange' | 'readOnly'
+>;
 interface AppInputProps extends HTMLInputProps {
-    className?: string,
-    value?: string | number,
-    onChange?: (value: string) => void,
-    type?: string,
-    placeholder: string,
-    autofocus? : boolean,
-    readonly?: boolean,
+    className?: string;
+    value?: string | number;
+    onChange?: (value: string) => void;
+    type?: string;
+    placeholder: string;
+    autofocus?: boolean;
+    readonly?: boolean;
 }
 
 export const AppInput = memo((props: AppInputProps) => {
@@ -38,7 +47,6 @@ export const AppInput = memo((props: AppInputProps) => {
 
     const isCaretVisible = isFocused && !readonly;
 
-
     const onChangeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
         onChange?.(event.target.value);
         setCaretPosition(event.target.value.length);
@@ -64,9 +72,8 @@ export const AppInput = memo((props: AppInputProps) => {
     return (
         <div className={classNames(styles.AppInput, mods, [className])}>
             {placeholder && (
-                <div className={styles.placeholder}>
-                    {`${placeholder}>`}
-                </div>)}
+                <div className={styles.placeholder}>{`${placeholder}>`}</div>
+            )}
             <div className={styles.caretWrapper}>
                 <input
                     ref={ref}
@@ -83,7 +90,7 @@ export const AppInput = memo((props: AppInputProps) => {
                 {isCaretVisible && (
                     <span
                         className={styles.caret}
-                        style={{left: `${caretPosition * 9}px`}}
+                        style={{ left: `${caretPosition * 9}px` }}
                     />
                 )}
             </div>

@@ -9,7 +9,7 @@ import { ArticleView } from '../../model/consts/consts';
 
 interface ArticleViewSelectorProps {
     className?: string;
-    view: ArticleView,
+    view: ArticleView;
     onViewClick?: (view: ArticleView) => void;
 }
 
@@ -32,7 +32,9 @@ export const ArticleViewSelector = memo((props: ArticleViewSelectorProps) => {
     };
 
     return (
-        <div className={classNames(styles.ArticleViewSelector, {}, [className])}>
+        <div
+            className={classNames(styles.ArticleViewSelector, {}, [className])}
+        >
             {viewTypes.map((viewType) => (
                 <AppButton
                     key={viewType.view}
@@ -41,7 +43,9 @@ export const ArticleViewSelector = memo((props: ArticleViewSelectorProps) => {
                 >
                     <Icon
                         Svg={viewType.icon}
-                        className={classNames('', { [styles.notSelected]: viewType.view !== view })}
+                        className={classNames('', {
+                            [styles.notSelected]: viewType.view !== view,
+                        })}
                     />
                 </AppButton>
             ))}

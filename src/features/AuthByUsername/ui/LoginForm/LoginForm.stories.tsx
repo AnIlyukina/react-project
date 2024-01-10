@@ -1,16 +1,14 @@
-import type {Meta, StoryObj} from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import LoginForm from './LoginForm';
-import {ThemeDecorator} from '@/shared/config/Decorator/ThemeDecorator';
-import {Theme} from '@/app/providers/ThemeProvider';
-import {StoreDecorator} from '@/shared/config/Decorator/StoreDecorator';
+import { ThemeDecorator } from '@/shared/config/Decorator/ThemeDecorator';
+import { Theme } from '@/app/providers/ThemeProvider';
+import { StoreDecorator } from '@/shared/config/Decorator/StoreDecorator';
 
 const meta = {
     title: 'features/LoginForm',
     component: LoginForm,
     tags: ['autodocs'],
-    argTypes: {
-    },
-
+    argTypes: {},
 } satisfies Meta<typeof LoginForm>;
 
 export default meta;
@@ -21,7 +19,8 @@ export const Light: Story = {
     args: {},
 };
 Light.decorators = [
-    StoreDecorator({login: { username: '123', password: '123'}})];
+    StoreDecorator({ login: { username: '123', password: '123' } }),
+];
 
 export const Dark: Story = {
     args: {},
@@ -29,18 +28,19 @@ export const Dark: Story = {
 
 Dark.decorators = [
     ThemeDecorator(Theme.DARK),
-    StoreDecorator({login: { username: '123', password: '123'}})];
+    StoreDecorator({ login: { username: '123', password: '123' } }),
+];
 
 export const WithError: Story = {
     args: {},
 };
 WithError.decorators = [
-    StoreDecorator({login: { username: '123', password: '123', error: 'Ошибочка вышла'}})];
+    StoreDecorator({
+        login: { username: '123', password: '123', error: 'Ошибочка вышла' },
+    }),
+];
 
 export const Loading: Story = {
     args: {},
 };
-Loading.decorators = [
-    StoreDecorator({login: { isLoading: true }})];
-
-
+Loading.decorators = [StoreDecorator({ login: { isLoading: true } })];

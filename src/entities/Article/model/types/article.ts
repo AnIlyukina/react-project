@@ -1,28 +1,31 @@
-import {User} from '@/entities/User';
-import {ArticleTypeBlock, ArticleType} from '../../model/consts/consts';
+import { User } from '@/entities/User';
+import { ArticleTypeBlock, ArticleType } from '../../model/consts/consts';
 
 export interface ArticleBlockBase {
     id: string;
     type: ArticleTypeBlock;
 }
-export interface ArticleTextBlock extends ArticleBlockBase{
+export interface ArticleTextBlock extends ArticleBlockBase {
     type: ArticleTypeBlock.TEXT;
     title?: string;
     paragraphs: Array<string>;
 }
 
-export interface ArticleImageBlock extends ArticleBlockBase{
+export interface ArticleImageBlock extends ArticleBlockBase {
     type: ArticleTypeBlock.IMAGE;
     src: string;
     title: string;
 }
 
-export interface ArticleCodeBlock extends ArticleBlockBase{
+export interface ArticleCodeBlock extends ArticleBlockBase {
     type: ArticleTypeBlock.CODE;
     code: string;
 }
 
-export type ArticleBlock = ArticleTextBlock | ArticleImageBlock | ArticleCodeBlock;
+export type ArticleBlock =
+    | ArticleTextBlock
+    | ArticleImageBlock
+    | ArticleCodeBlock;
 
 export interface Article {
     id: string;

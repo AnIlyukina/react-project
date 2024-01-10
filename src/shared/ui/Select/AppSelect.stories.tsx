@@ -1,12 +1,11 @@
-import type {Meta, StoryObj} from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import { AppSelect } from './AppSelect';
 
 const meta = {
     title: 'shared/AppSelect',
     component: AppSelect,
     tags: ['autodocs'],
-    argTypes: {
-    },
+    argTypes: {},
 } satisfies Meta<typeof AppSelect>;
 
 export default meta;
@@ -20,13 +19,13 @@ export const Primary: Story = {
         options: [
             {
                 value: '1',
-                content: 'Первый'
+                content: 'Первый',
             },
             {
                 value: '2',
-                content: 'Второй'
-            }
-        ]
+                content: 'Второй',
+            },
+        ],
     },
 };
 
@@ -36,12 +35,12 @@ export const WithoutLabel: Story = {
         options: [
             {
                 value: '1',
-                content: 'Первый'
+                content: 'Первый',
             },
             {
                 value: '2',
-                content: 'Второй'
-            }
-        ]
+                content: 'Второй',
+            },
+        ],
     },
 };

@@ -1,6 +1,6 @@
-import type {Meta, StoryObj} from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import ArticleRating from './ArticleRating';
-import {StoreDecorator} from '@/shared/config/Decorator/StoreDecorator';
+import { StoreDecorator } from '@/shared/config/Decorator/StoreDecorator';
 
 const meta = {
     title: 'features/ArticleRating',
@@ -22,9 +22,8 @@ Normal.decorators = [
     StoreDecorator({
         user: {
             authData: {
-                id: '1'
-            }
-        }
-    })
+                id: '1',
+            },
+        },
+    }),
 ];
-

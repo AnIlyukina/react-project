@@ -1,5 +1,5 @@
-import type {Meta, StoryObj} from '@storybook/react';
-import {Flex} from './Flex';
+import type { Meta, StoryObj } from '@storybook/react';
+import { Flex } from './Flex';
 
 const meta = {
     title: 'shared/Flex',
@@ -22,7 +22,7 @@ export const Row: Story = {
                 <div>first</div>
             </>
         ),
-        direction: 'row'
+        direction: 'row',
     },
 };
 
@@ -36,7 +36,7 @@ export const Column: Story = {
                 <div>first</div>
             </>
         ),
-        direction: 'column'
+        direction: 'column',
     },
 };
 
@@ -51,7 +51,7 @@ export const RowGap4: Story = {
             </>
         ),
         direction: 'row',
-        gap: '4'
+        gap: '4',
     },
 };
 
@@ -66,7 +66,7 @@ export const RowGap8: Story = {
             </>
         ),
         direction: 'row',
-        gap: '8'
+        gap: '8',
     },
 };
 
@@ -81,7 +81,7 @@ export const RowGap16: Story = {
             </>
         ),
         direction: 'row',
-        gap: '16'
+        gap: '16',
     },
 };
 
@@ -96,7 +96,7 @@ export const RowGap32: Story = {
             </>
         ),
         direction: 'row',
-        gap: '32'
+        gap: '32',
     },
 };
 
@@ -111,7 +111,7 @@ export const ColumnGap16: Story = {
             </>
         ),
         direction: 'column',
-        gap: '16'
+        gap: '16',
     },
 };
 
@@ -126,9 +126,6 @@ export const ColumnGap32: Story = {
             </>
         ),
         direction: 'column',
-        gap: '32'
+        gap: '32',
     },
 };
-
-
-

@@ -1,6 +1,6 @@
-import {StateSchema} from '@/app/providers/StoreProvider';
-import {getProfileValidateErrors} from './getProfileValidateErrors';
-import {ValidateProfileError} from '../../consts/consts';
+import { StateSchema } from '@/app/providers/StoreProvider';
+import { getProfileValidateErrors } from './getProfileValidateErrors';
+import { ValidateProfileError } from '../../consts/consts';
 
 describe('getProfileValidateErrors', () => {
     test('should return true', () => {
@@ -8,20 +8,22 @@ describe('getProfileValidateErrors', () => {
             profile: {
                 validateErrors: [
                     ValidateProfileError.INCORRECT_AGE,
-                    ValidateProfileError.INCORRECT_COUNTRY
-                ]
-            }
+                    ValidateProfileError.INCORRECT_COUNTRY,
+                ],
+            },
         };
 
         expect(getProfileValidateErrors(state as StateSchema)).toEqual([
             ValidateProfileError.INCORRECT_AGE,
-            ValidateProfileError.INCORRECT_COUNTRY
+            ValidateProfileError.INCORRECT_COUNTRY,
         ]);
     });
 
     test('should work with empty state', () => {
         const state: DeepPartial<StateSchema> = {};
 
-        expect(getProfileValidateErrors(state as StateSchema)).toEqual(undefined);
+        expect(getProfileValidateErrors(state as StateSchema)).toEqual(
+            undefined,
+        );
     });
 });

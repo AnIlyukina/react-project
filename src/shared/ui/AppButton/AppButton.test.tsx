@@ -1,5 +1,5 @@
-import {AppButton, ThemeButton} from '@/shared/ui/AppButton/AppButton';
-import {render, screen} from '@testing-library/react';
+import { AppButton, ThemeButton } from '@/shared/ui/AppButton/AppButton';
+import { render, screen } from '@testing-library/react';
 
 describe('AppButton', () => {
     test('проверка отрисовки в дом', () => {

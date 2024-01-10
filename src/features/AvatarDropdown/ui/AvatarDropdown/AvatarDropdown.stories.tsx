@@ -1,5 +1,5 @@
-import type {Meta, StoryObj} from '@storybook/react';
-import {AvatarDropdown} from './AvatarDropdown';
+import type { Meta, StoryObj } from '@storybook/react';
+import { AvatarDropdown } from './AvatarDropdown';
 
 const meta = {
     title: 'features/AvatarDropdown',

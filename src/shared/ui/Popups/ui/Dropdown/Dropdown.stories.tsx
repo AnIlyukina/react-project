@@ -1,6 +1,6 @@
-import type {Meta, StoryObj} from '@storybook/react';
-import {Dropdown} from './Dropdown';
-import {AppButton} from '@/shared/ui/AppButton/AppButton';
+import type { Meta, StoryObj } from '@storybook/react';
+import { Dropdown } from './Dropdown';
+import { AppButton } from '@/shared/ui/AppButton/AppButton';
 
 const meta = {
     title: 'shared/Popups/Dropdown',
@@ -18,11 +18,11 @@ export const Normal: Story = {
         trigger: <AppButton>Open!!! </AppButton>,
         items: [
             {
-                content: 'first'
+                content: 'first',
             },
             {
-                content: 'second'
-            }
-        ]
+                content: 'second',
+            },
+        ],
     },
 };

@@ -1,14 +1,13 @@
-import type {Meta, StoryObj} from '@storybook/react';
-import {AppButton, ButtonSize, ThemeButton} from './AppButton';
-import {ThemeDecorator} from '@/shared/config/Decorator/ThemeDecorator';
-import {Theme} from '@/app/providers/ThemeProvider';
+import type { Meta, StoryObj } from '@storybook/react';
+import { AppButton, ButtonSize, ThemeButton } from './AppButton';
+import { ThemeDecorator } from '@/shared/config/Decorator/ThemeDecorator';
+import { Theme } from '@/app/providers/ThemeProvider';
 
 const meta = {
     title: 'shared/Button',
     component: AppButton,
     tags: ['autodocs'],
-    argTypes: {
-    },
+    argTypes: {},
 } satisfies Meta<typeof AppButton>;
 
 export default meta;
@@ -39,7 +38,7 @@ export const OutlineSizeL: Story = {
     args: {
         children: 'Text',
         theme: ThemeButton.OUTLINE,
-        size: ButtonSize.L
+        size: ButtonSize.L,
     },
 };
 
@@ -47,7 +46,7 @@ export const OutlineSizeXL: Story = {
     args: {
         children: 'Text',
         theme: ThemeButton.OUTLINE,
-        size: ButtonSize.XL
+        size: ButtonSize.XL,
     },
 };
 
@@ -77,7 +76,7 @@ export const Square: Story = {
     args: {
         children: '>',
         theme: ThemeButton.BACKGROUND_INVERTED,
-        square: true
+        square: true,
     },
 };
 

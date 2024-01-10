@@ -1,6 +1,6 @@
-import type {Meta, StoryObj} from '@storybook/react';
-import {ArticleTextBlockComponent} from './ArticleTextBlockComponent';
-import {StoreDecorator} from '@/shared/config/Decorator/StoreDecorator';
+import type { Meta, StoryObj } from '@storybook/react';
+import { ArticleTextBlockComponent } from './ArticleTextBlockComponent';
+import { StoreDecorator } from '@/shared/config/Decorator/StoreDecorator';
 
 const meta = {
     title: 'entities/Article/ArticleTextBlockComponent',
@@ -17,9 +17,7 @@ type Story = StoryObj<typeof meta>;
 export const Normal: Story = {
     args: {
         // @ts-ignore
-        block: {
-
-        }
+        block: {},
     },
 };
 

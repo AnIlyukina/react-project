@@ -1,15 +1,14 @@
-import type {Meta, StoryObj} from '@storybook/react';
-import {Sidebar} from './Sidebar';
-import {ThemeDecorator} from '@/shared/config/Decorator/ThemeDecorator';
-import {Theme} from '@/app/providers/ThemeProvider';
-import {StoreDecorator} from '@/shared/config/Decorator/StoreDecorator';
+import type { Meta, StoryObj } from '@storybook/react';
+import { Sidebar } from './Sidebar';
+import { ThemeDecorator } from '@/shared/config/Decorator/ThemeDecorator';
+import { Theme } from '@/app/providers/ThemeProvider';
+import { StoreDecorator } from '@/shared/config/Decorator/StoreDecorator';
 
 const meta = {
     title: 'widgets/Sidebar',
     component: Sidebar,
     tags: ['autodocs'],
-    argTypes: {
-    },
+    argTypes: {},
 } satisfies Meta<typeof Sidebar>;
 
 export default meta;
@@ -23,9 +22,9 @@ export const Light: Story = {
 Light.decorators = [
     StoreDecorator({
         user: {
-            authData: {}
-        }
-    })
+            authData: {},
+        },
+    }),
 ];
 
 export const Dark: Story = {
@@ -35,9 +34,9 @@ Dark.decorators = [
     ThemeDecorator(Theme.DARK),
     StoreDecorator({
         user: {
-            authData: {}
-        }
-    })
+            authData: {},
+        },
+    }),
 ];
 
 export const NoAuth: Story = {
@@ -45,7 +44,6 @@ export const NoAuth: Story = {
 };
 NoAuth.decorators = [
     StoreDecorator({
-        user: {
-        }
-    })
+        user: {},
+    }),
 ];

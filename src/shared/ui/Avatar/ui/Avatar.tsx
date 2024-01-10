@@ -1,25 +1,19 @@
-import {classNames} from '@/shared/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import styles from './Avatar.module.scss';
-import {CSSProperties, useMemo} from 'react';
-import {AppImage} from "../../AppImage/AppImage";
+import { CSSProperties, useMemo } from 'react';
+import { AppImage } from '../../AppImage/AppImage';
 import Profile from '../../../assets/icon/profile-page.svg';
-import {Icon} from "@/shared/ui/Icon/Icon";
-import {Skeleton} from "@/shared/ui/Skeleton/Skeleton";
+import { Icon } from '@/shared/ui/Icon/Icon';
+import { Skeleton } from '@/shared/ui/Skeleton/Skeleton';
 
 interface AvatarProps {
-    className?: string,
-	src?: string,
-	size?: number,
-	alt?: string,
+    className?: string;
+    src?: string;
+    size?: number;
+    alt?: string;
 }
 export const Avatar = (props: AvatarProps) => {
-
-    const {
-        className,
-        src,
-        size,
-        alt = 'аватар',
-    } = props;
+    const { className, src, size, alt = 'аватар' } = props;
 
     const sizeStile = useMemo<CSSProperties>(() => {
         return {
@@ -28,8 +22,8 @@ export const Avatar = (props: AvatarProps) => {
         };
     }, [size]);
 
-    const fallback = <Skeleton width={size} height={size} border='50%'/>
-    const errorFallback = <Icon width={size} height={size} Svg={Profile}/>
+    const fallback = <Skeleton width={size} height={size} border="50%" />;
+    const errorFallback = <Icon width={size} height={size} Svg={Profile} />;
 
     return (
         <AppImage

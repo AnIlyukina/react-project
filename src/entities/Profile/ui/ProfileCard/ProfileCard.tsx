@@ -1,36 +1,34 @@
-import {classNames, Mods} from '@/shared/lib/classNames/classNames';
+import { classNames, Mods } from '@/shared/lib/classNames/classNames';
 import styles from './ProfileCard.module.scss';
-import {useTranslation} from 'react-i18next';
-import {AppText, TextAlign, TextTheme} from '@/shared/ui/AppText/ui/AppText';
-import {AppInput} from '@/shared/ui/AppInput/AppInput';
-import {Profile} from '../../model/types/profile';
-import {Loader} from '@/shared/ui/Loader/Loader';
-import {Avatar} from '@/shared/ui/Avatar/ui/Avatar';
+import { useTranslation } from 'react-i18next';
+import { AppText, TextAlign, TextTheme } from '@/shared/ui/AppText/ui/AppText';
+import { AppInput } from '@/shared/ui/AppInput/AppInput';
+import { Profile } from '../../model/types/profile';
+import { Loader } from '@/shared/ui/Loader/Loader';
+import { Avatar } from '@/shared/ui/Avatar/ui/Avatar';
 
-import {Currency} from '@/entities/Currency/model/types/currency';
-import {CurrencySelect} from '@/entities/Currency';
+import { Currency } from '@/entities/Currency/model/types/currency';
+import { CurrencySelect } from '@/entities/Currency';
 
-import {Country, CountrySelect} from '@/entities/Country';
-import {HStack, VStack} from '@/shared/ui/Stack';
+import { Country, CountrySelect } from '@/entities/Country';
+import { HStack, VStack } from '@/shared/ui/Stack';
 
 interface ProfileCardProps {
-    className?: string,
-    profileData?: Profile | null,
-    error?: string,
-    isLoading?: boolean,
-    onChangeLastName?: (value?: string) => void,
-    onChangeFirstName?: (value?: string) => void,
-    onChangeAge?: (value?: string) => void,
-    onChangeCity?: (value?: string) => void,
-	onChangeUsername?: (value?: string) => void,
-	onChangeAvatar?: (value?: string) => void,
-    onChangeCurrency?: (value: Currency) => void,
-    onChangeCountry?: (value: Country) => void,
-    readonly?: boolean,
-
+    className?: string;
+    profileData?: Profile | null;
+    error?: string;
+    isLoading?: boolean;
+    onChangeLastName?: (value?: string) => void;
+    onChangeFirstName?: (value?: string) => void;
+    onChangeAge?: (value?: string) => void;
+    onChangeCity?: (value?: string) => void;
+    onChangeUsername?: (value?: string) => void;
+    onChangeAvatar?: (value?: string) => void;
+    onChangeCurrency?: (value: Currency) => void;
+    onChangeCountry?: (value: Country) => void;
+    readonly?: boolean;
 }
 export const ProfileCard = (props: ProfileCardProps) => {
-
     const {
         className,
         profileData,
@@ -47,19 +45,33 @@ export const ProfileCard = (props: ProfileCardProps) => {
         onChangeCountry,
     } = props;
 
-    const {t} = useTranslation('profile');
+    const { t } = useTranslation('profile');
 
     if (isLoading) {
         return (
-            <HStack max justify='center' className={classNames(styles.ProfileCard, {}, [className, styles.loading])}>
-                <Loader/>
+            <HStack
+                max
+                justify="center"
+                className={classNames(styles.ProfileCard, {}, [
+                    className,
+                    styles.loading,
+                ])}
+            >
+                <Loader />
             </HStack>
         );
     }
 
     if (error) {
         return (
-            <HStack gap='16' justify='center' className={classNames(styles.ProfileCard, {}, [className, styles.error])}>
+            <HStack
+                gap="16"
+                justify="center"
+                className={classNames(styles.ProfileCard, {}, [
+                    className,
+                    styles.error,
+                ])}
+            >
                 <AppText
                     theme={TextTheme.ERROR}
                     align={TextAlign.CENTER}
@@ -71,17 +83,21 @@ export const ProfileCard = (props: ProfileCardProps) => {
     }
 
     const mods: Mods = {
-        [styles.editing]: !readonly
+        [styles.editing]: !readonly,
     };
 
     return (
-        <VStack gap='8' max className={classNames(styles.ProfileCard, mods, [className])}>
+        <VStack
+            gap="8"
+            max
+            className={classNames(styles.ProfileCard, mods, [className])}
+        >
             {profileData?.avatar && (
-                <HStack justify='center' max>
+                <HStack justify="center" max>
                     <Avatar
                         size={180}
                         src={profileData?.avatar}
-                        alt='аватар пользователя'
+                        alt="аватар пользователя"
                     />
                 </HStack>
             )}
@@ -91,7 +107,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
                 className={styles.input}
                 onChange={onChangeUsername}
                 readonly={readonly}
-                data-testid='ProfileCard.username'
+                data-testid="ProfileCard.username"
             />
             <AppInput
                 placeholder={t('Введите ссылку на аватар')}
@@ -99,7 +115,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
                 className={styles.input}
                 onChange={onChangeAvatar}
                 readonly={readonly}
-                data-testid='ProfileCard.avatar'
+                data-testid="ProfileCard.avatar"
             />
             <AppInput
                 placeholder={t('Имя')}
@@ -107,7 +123,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
                 className={styles.input}
                 onChange={onChangeFirstName}
                 readonly={readonly}
-                data-testid='ProfileCard.first'
+                data-testid="ProfileCard.first"
             />
             <AppInput
                 placeholder={t('Фамилия')}
@@ -115,7 +131,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
                 className={styles.input}
                 onChange={onChangeLastName}
                 readonly={readonly}
-                data-testid='ProfileCard.lastname'
+                data-testid="ProfileCard.lastname"
             />
             <AppInput
                 placeholder={t('Ваш возраст')}
@@ -123,7 +139,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
                 className={styles.input}
                 onChange={onChangeAge}
                 readonly={readonly}
-                data-testid='ProfileCard.age'
+                data-testid="ProfileCard.age"
             />
             <AppInput
                 placeholder={t('Ваш город')}
@@ -131,21 +147,21 @@ export const ProfileCard = (props: ProfileCardProps) => {
                 className={styles.input}
                 onChange={onChangeCity}
                 readonly={readonly}
-                data-testid='ProfileCard.city'
+                data-testid="ProfileCard.city"
             />
             <CurrencySelect
                 className={styles.input}
                 value={profileData?.currency}
                 onChange={onChangeCurrency}
                 readonly={readonly}
-                data-testid='ProfileCard.currency'
+                data-testid="ProfileCard.currency"
             />
             <CountrySelect
                 className={styles.input}
                 value={profileData?.country}
                 onChange={onChangeCountry}
                 readonly={readonly}
-                data-testid='ProfileCard.country'
+                data-testid="ProfileCard.country"
             />
         </VStack>
     );

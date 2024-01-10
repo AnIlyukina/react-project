@@ -1,15 +1,13 @@
-import type {Meta, StoryObj} from '@storybook/react';
-import {AppInput} from './AppInput';
-import {ThemeDecorator} from '@/shared/config/Decorator/ThemeDecorator';
-import {Theme} from '@/app/providers/ThemeProvider';
+import type { Meta, StoryObj } from '@storybook/react';
+import { AppInput } from './AppInput';
+import { ThemeDecorator } from '@/shared/config/Decorator/ThemeDecorator';
+import { Theme } from '@/app/providers/ThemeProvider';
 
 const meta = {
     title: 'shared/AppInput',
     component: AppInput,
     tags: ['autodocs'],
-    argTypes: {
-    },
-
+    argTypes: {},
 } satisfies Meta<typeof AppInput>;
 
 export default meta;
@@ -20,8 +18,7 @@ export const Light: Story = {
     args: {
         placeholder: 'Text',
         autofocus: true,
-        value: '11111'
-
+        value: '11111',
     },
 };
 
@@ -29,7 +26,7 @@ export const Dark: Story = {
     args: {
         placeholder: 'Text',
         autofocus: true,
-        value: '11111'
+        value: '11111',
     },
 };
 

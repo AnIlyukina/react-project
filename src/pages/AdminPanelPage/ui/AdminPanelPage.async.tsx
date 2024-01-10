@@ -1,7 +1,10 @@
-import {lazy} from 'react';
+import { lazy } from 'react';
 
-export const AdminPanelPageAsync = lazy(() => new Promise((resolve) => {
-    // @ts-ignore
-    // для прелоадера
-    setTimeout(() => resolve(import('./AdminPanelPage')), 1500);
-}));
+export const AdminPanelPageAsync = lazy(
+    () =>
+        new Promise((resolve) => {
+            // @ts-ignore
+            // для прелоадера
+            setTimeout(() => resolve(import('./AdminPanelPage')), 1500);
+        }),
+);

@@ -1,7 +1,7 @@
-import {StateSchema} from '@/app/providers/StoreProvider';
-import {getProfileForm} from './getProfileForm';
-import {Country} from '@/entities/Country';
-import {Currency} from '@/entities/Currency';
+import { StateSchema } from '@/app/providers/StoreProvider';
+import { getProfileForm } from './getProfileForm';
+import { Country } from '@/entities/Country';
+import { Currency } from '@/entities/Currency';
 
 describe('getProfileForm', () => {
     test('should return form', () => {
@@ -18,8 +18,8 @@ describe('getProfileForm', () => {
 
         const state: DeepPartial<StateSchema> = {
             profile: {
-                form: form
-            }
+                form: form,
+            },
         };
 
         expect(getProfileForm(state as StateSchema)).toEqual(form);
