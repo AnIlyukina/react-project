@@ -2,7 +2,7 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import styles from './NotificationButton.module.scss';
 import { AppButton, ThemeButton } from '@/shared/ui/AppButton/AppButton';
 import { Icon } from '@/shared/ui/Icon/Icon';
-import NotificationIcon from '@/shared/assets/icon/notification.svg';
+import NotificationIcon from '@/shared/assets/icon/notification.svg?react';
 import { NotificationList } from '@/entities/Notification';
 import { Popover } from '@/shared/ui/Popups';
 import React, { useCallback, useState } from 'react';

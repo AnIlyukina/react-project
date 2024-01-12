@@ -8,9 +8,10 @@ import { userReducer } from '@/entities/User';
 import { uiReducer } from '@/features/UI';
 import { createReducerManager } from './reducerManager';
 import { $api } from '@/shared/api/api';
-import { To } from 'history';
 import { NavigateOptions } from 'react-router';
 import { rtkApi } from '@/shared/api/rtkApi';
+// @ts-ignore
+import { To } from 'history';
 
 // Оборачиваем в функцию для переиспользования, например в storybook
 export function createReduxStore(

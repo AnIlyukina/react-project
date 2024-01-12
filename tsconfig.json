@@ -12,6 +12,10 @@
         "paths": {
             "@/*": ["./src/*"]
         },
+        "types": [
+            "vite-plugin-svgr/client",
+            "node"
+        ],
         // esModuleInterop позволяет работать с пакетами, которые используют common js
         // как с обычными пакетами с помошью import (require() module.export) = common.js
         "allowSyntheticDefaultImports": true,

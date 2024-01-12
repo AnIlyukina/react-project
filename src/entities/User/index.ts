@@ -9,6 +9,8 @@ import {
     getUserRoles,
 } from './model/selectors/roleSelector';
 
+import { useJsonSettingsByKey } from './model/selectors/jsonSettings';
+
 export {
     userReducer,
     userActions,
@@ -20,4 +22,5 @@ export {
     isUserAdmin,
     isUserManager,
     getUserRoles,
+    useJsonSettingsByKey,
 };

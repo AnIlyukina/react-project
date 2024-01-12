@@ -2,7 +2,7 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import styles from './Avatar.module.scss';
 import { CSSProperties, useMemo } from 'react';
 import { AppImage } from '../../AppImage/AppImage';
-import Profile from '../../../assets/icon/profile-page.svg';
+import Profile from '../../../assets/icon/profile-page.svg?react';
 import { Icon } from '@/shared/ui/Icon/Icon';
 import { Skeleton } from '@/shared/ui/Skeleton/Skeleton';
 

@@ -19,7 +19,8 @@
         "test:unit": "jest",
         "storybook": "storybook dev -p 6006 -c config/storybook",
         "storybook:build": "storybook build -c config/storybook",
-        "generate:slice": "node ./scripts/createSlice/index.js"
+        "generate:slice": "node ./scripts/createSlice/index.js",
+        "postinstall": "node ./scripts/clear-cache.js"
     },
     "keywords": [],
     "author": "",
@@ -46,6 +47,7 @@
         "@testing-library/user-event": "^14.5.2",
         "@types/circular-dependency-plugin": "^5.0.8",
         "@types/jest": "^29.5.5",
+        "@types/node": "^20.11.0",
         "@types/react": "^18.2.22",
         "@types/react-dom": "^18.2.7",
         "@types/react-router-dom": "^5.3.3",

@@ -5,12 +5,18 @@ import { Sidebar } from '@/widgets/Sidebar';
 
 import { Suspense, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getUserInited, userActions } from '@/entities/User';
+import {
+    getUserInited,
+    useJsonSettingsByKey,
+    userActions,
+} from '@/entities/User';
 
 const App = () => {
     const dispatch = useDispatch();
     const inited = useSelector(getUserInited);
 
+    const themeFromSettings = useJsonSettingsByKey('theme');
+    const isFirstVisit = useJsonSettingsByKey('isFirstVisit');
     useEffect(() => {
         dispatch(userActions.initAuthData());
     }, [dispatch]);

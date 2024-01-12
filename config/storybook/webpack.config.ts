@@ -17,9 +17,8 @@ export default ({ config }: { config: webpack.Configuration }) => {
         '@': paths.src,
     };
 
-    // eslint-disable-next-line
-    // @ts-ignore
     config!.module!.rules = config!.module!.rules!.map(
+        // @ts-ignore
         (rule: webpack.RuleSetRule) => {
             if (/svg/.test(rule.test as string)) {
                 return {
