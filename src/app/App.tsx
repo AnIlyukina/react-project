@@ -10,27 +10,45 @@ import {
     useJsonSettingsByKey,
     userActions,
 } from '@/entities/User';
+import {PageLoader} from '@/widgets/PageLoader/PageLoader';
+import {ToggleFeatures} from '@/shared/lib/features/ToggleFeatures/ToggleFeatures';
+import {MainLayout} from '@/layout/MainLayout';
 
 const App = () => {
     const dispatch = useDispatch();
     const inited = useSelector(getUserInited);
 
-    const themeFromSettings = useJsonSettingsByKey('theme');
-    const isFirstVisit = useJsonSettingsByKey('isFirstVisit');
     useEffect(() => {
         dispatch(userActions.initAuthData());
     }, [dispatch]);
 
+    if (!inited) {
+       return  <PageLoader/>;
+    }
+
     return (
-        <div className={classNames('app', {}, [])}>
-            <Suspense fallback="">
-                <Navbar />
-                <div className="content-page">
-                    <Sidebar />
-                    {inited && <AppRouter />}
+        <ToggleFeatures
+            feature={'isAppRedesigned'}
+            on={
+                <div className={classNames('app_redesigned', {}, [])}>
+                    <Suspense fallback="">
+                        <Navbar />
+                        <div className="content-page">
+                            <Sidebar />
+                            <AppRouter />
+                        </div>
+                    </Suspense>
                 </div>
-            </Suspense>
-        </div>
+            }
+            off={
+                <div className={classNames('app', {}, [])}>
+                    <Suspense fallback="">
+                        <MainLayout header={ <Navbar />} content={<AppRouter />} sidebar={ <Sidebar/>}/>
+                    </Suspense>
+                </div>
+            }
+        />
+
     );
 };
 

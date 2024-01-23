@@ -8,8 +8,9 @@ import { getUIScrollByPath, uiActions } from '@/features/UI';
 import { useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { StateSchema } from '@/app/providers/StoreProvider';
-import cls from './Page.module.scss';
+import styles from './Page.module.scss';
 import { TestProps } from '@/shared/types/tests';
+import {toggleFeatures} from '@/shared/lib/features';
 
 interface PageProps extends TestProps {
     className?: string;
@@ -51,14 +52,21 @@ export const Page = memo((props: PageProps) => {
     return (
         <main
             ref={wrapperRef}
-            className={classNames(cls.Page, {}, [className])}
+            className={classNames(
+                toggleFeatures({
+                    name: 'isAppRedesigned',
+                    on: () => styles.PageRedesigned,
+                    off: () => styles.Page
+                }),
+                {},
+                [className])}
             onScroll={onScroll}
             data-testid={props['data-testid'] ?? 'Page'}
             id={PAGE_ID}
         >
             {children}
             {onScrollEnd ? (
-                <div className={cls.trigger} ref={triggerRef} />
+                <div className={styles.trigger} ref={triggerRef} />
             ) : null}
         </main>
     );
