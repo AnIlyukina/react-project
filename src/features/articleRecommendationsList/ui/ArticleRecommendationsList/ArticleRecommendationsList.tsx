@@ -2,9 +2,9 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import styles from './ArticleRecommendationsList.module.scss';
 import { memo } from 'react';
-import { AppText, TextSize } from '@/shared/ui/AppText/ui/AppText';
+import { AppText, TextSize } from '@/shared/ui/deprecatad/AppText/ui/AppText';
 import { ArticleList } from '@/entities/Article';
-import { VStack } from '@/shared/ui/Stack';
+import { VStack } from '@/shared/ui/deprecatad/Stack';
 import { useArticleRecommendationsList } from '../../api/articleRecommendationsApi';
 
 interface ArticleRecommendationsListProps {

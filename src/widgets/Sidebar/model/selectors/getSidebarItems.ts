@@ -1,9 +1,16 @@
 import { createSelector } from '@reduxjs/toolkit';
 import { getUserAuthData } from '@/entities/User';
-import AboutIcon from '@/shared/assets/icon/about-page.svg?react';
-import MainIcon from '@/shared/assets/icon/home-page.svg?react';
-import ProfileIcon from '@/shared/assets/icon/profile-page.svg?react';
-import ArticlesIcon from '@/shared/assets/icon/article-page.svg?react';
+import AboutIconDeprecated from '@/shared/assets/icon/about-20-20.svg?react';
+import MainIconDeprecated from '@/shared/assets/icon/home-page.svg?react';
+import ProfileIconDeprecated from '@/shared/assets/icon/profile-20-20.svg?react';
+import ArticlesIconDeprecated from '@/shared/assets/icon/article-page.svg?react';
+
+import AboutIcon from '@/shared/assets/icon/Info.svg?react';
+import MainIcon from '@/shared/assets/icon/home.svg?react';
+import ProfileIcon from '@/shared/assets/icon/avatar.svg?react';
+// Todo заменить картинку ArticlesIcon
+import ArticlesIcon from '@/shared/assets/icon/article.svg?react';
+
 import { SidebarItemType } from '../types/sidebar';
 import {
     getRouteAbout,
@@ -11,17 +18,26 @@ import {
     getRouteMain,
     getRouteProfile,
 } from '@/shared/const/router';
+import { toggleFeatures } from '@/shared/lib/features';
 
 export const getSidebarItems = createSelector(getUserAuthData, (userData) => {
     const sidebarItemsList: SidebarItemType[] = [
         {
             path: getRouteMain(),
-            Icon: MainIcon,
+            Icon: toggleFeatures({
+                name: 'isAppRedesigned',
+                on: () => MainIcon,
+                off: () => MainIconDeprecated,
+            }),
             text: 'Главная',
         },
         {
             path: getRouteAbout(),
-            Icon: AboutIcon,
+            Icon: toggleFeatures({
+                name: 'isAppRedesigned',
+                on: () => AboutIcon,
+                off: () => AboutIconDeprecated,
+            }),
             text: 'О сайте',
         },
     ];
@@ -30,13 +46,21 @@ export const getSidebarItems = createSelector(getUserAuthData, (userData) => {
         sidebarItemsList.push(
             {
                 path: getRouteProfile(userData.id),
-                Icon: ProfileIcon,
+                Icon: toggleFeatures({
+                    name: 'isAppRedesigned',
+                    on: () => ProfileIcon,
+                    off: () => ProfileIconDeprecated,
+                }),
                 text: 'Профиль',
                 authOnly: true,
             },
             {
                 path: getRouteArticles(),
-                Icon: ArticlesIcon,
+                Icon: toggleFeatures({
+                    name: 'isAppRedesigned',
+                    on: () => ArticlesIcon,
+                    off: () => ArticlesIconDeprecated,
+                }),
                 text: 'Статьи',
                 authOnly: true,
             },

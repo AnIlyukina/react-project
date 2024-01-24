@@ -1,7 +1,7 @@
 import { Country } from '../../model/types/country';
 import { useTranslation } from 'react-i18next';
 import { memo, useCallback } from 'react';
-import { ListBox } from '@/shared/ui/Popups';
+import { ListBox } from '@/shared/ui/deprecatad/Popups';
 
 interface CountrySelectProp {
     className?: string;

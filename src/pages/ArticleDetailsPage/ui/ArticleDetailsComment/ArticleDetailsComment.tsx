@@ -1,6 +1,6 @@
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { memo, useCallback } from 'react';
-import { AppText, TextSize } from '@/shared/ui/AppText/ui/AppText';
+import { AppText, TextSize } from '@/shared/ui/deprecatad/AppText/ui/AppText';
 import styles from '@/pages/ArticleDetailsPage/ui/ArticleDetailsPage/ArticleDetailsPage.module.scss';
 import { AddCommentForm } from '@/features/addCommentForm';
 import { CommentList } from '@/entities/Comment';
@@ -11,7 +11,7 @@ import { getArticleComments } from '../../model/slices/articleDetailsCommentsSli
 import { useTranslation } from 'react-i18next';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
-import { VStack } from '@/shared/ui/Stack';
+import { VStack } from '@/shared/ui/deprecatad/Stack';
 
 interface ArticleDetailsCommentProps {
     className?: string;

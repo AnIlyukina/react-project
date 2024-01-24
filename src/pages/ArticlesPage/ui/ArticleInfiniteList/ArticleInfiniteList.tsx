@@ -7,7 +7,7 @@ import {
     getArticlesPageIsLoading,
     getArticlesPageView,
 } from '../../model/selectors/articlesPageSelectors';
-import { AppText } from '@/shared/ui/AppText/ui/AppText';
+import { AppText } from '@/shared/ui/deprecatad/AppText/ui/AppText';
 import { useTranslation } from 'react-i18next';
 
 interface ArticleInfiniteListProps {

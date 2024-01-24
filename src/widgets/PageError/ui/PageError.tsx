@@ -1,7 +1,7 @@
 import { classNames } from '@/shared/lib/classNames/classNames';
 import styles from './PageError.module.scss';
 import { useTranslation } from 'react-i18next';
-import { AppButton } from '@/shared/ui/AppButton/AppButton';
+import { AppButton } from '@/shared/ui/deprecatad/AppButton/AppButton';
 
 interface ErrorPageProps {
     className?: string;

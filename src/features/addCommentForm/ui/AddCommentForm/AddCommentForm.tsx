@@ -1,15 +1,18 @@
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { memo, useCallback } from 'react';
-import { AppInput } from '@/shared/ui/AppInput/AppInput';
-import { AppButton, ThemeButton } from '@/shared/ui/AppButton/AppButton';
+import { AppInput } from '@/shared/ui/deprecatad/AppInput/AppInput';
+import {
+    AppButton,
+    ThemeButton,
+} from '@/shared/ui/deprecatad/AppButton/AppButton';
 import { useSelector } from 'react-redux';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import {
     DynamicModuleLoader,
     ReducerList,
 } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import { HStack } from '@/shared/ui/Stack';
+import { HStack } from '@/shared/ui/deprecatad/Stack';
 import {
     addCommentFormActions,
     addCommentFormReducer,

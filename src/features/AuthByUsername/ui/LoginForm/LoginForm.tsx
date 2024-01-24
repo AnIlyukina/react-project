@@ -1,13 +1,16 @@
 import { classNames } from '@/shared/lib/classNames/classNames';
 import styles from './LoginForm.module.scss';
 import { useTranslation } from 'react-i18next';
-import { AppButton, ThemeButton } from '@/shared/ui/AppButton/AppButton';
-import { AppInput } from '@/shared/ui/AppInput/AppInput';
+import {
+    AppButton,
+    ThemeButton,
+} from '@/shared/ui/deprecatad/AppButton/AppButton';
+import { AppInput } from '@/shared/ui/deprecatad/AppInput/AppInput';
 import { useSelector } from 'react-redux';
 import { memo, useCallback } from 'react';
 import { loginActions } from '@/features/AuthByUsername';
 import { loginByUsername } from '../../model/services/loginByUsername/loginByUsername';
-import { AppText, TextTheme } from '@/shared/ui/AppText/ui/AppText';
+import { AppText, TextTheme } from '@/shared/ui/deprecatad/AppText/ui/AppText';
 import { getLoginUsername } from '../../model/selectors/getLoginUsername/getLoginUsername';
 import { getLoginPassword } from '../../model/selectors/getLoginPassword/getLoginPassword';
 import { getLoginIsLoading } from '../../model/selectors/getLoginIsLoading/getLoginIsLoading';

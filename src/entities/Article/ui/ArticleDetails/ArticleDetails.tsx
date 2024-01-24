@@ -15,15 +15,19 @@ import {
     getArticleDetailsError,
     getArticleDetailsIsLoading,
 } from '../../model/selectors/articleDetails';
-import { AppText, TextAlign, TextSize } from '@/shared/ui/AppText/ui/AppText';
-import { Skeleton } from '@/shared/ui/Skeleton/Skeleton';
-import { Avatar } from '@/shared/ui/Avatar/ui/Avatar';
+import {
+    AppText,
+    TextAlign,
+    TextSize,
+} from '@/shared/ui/deprecatad/AppText/ui/AppText';
+import { Skeleton } from '@/shared/ui/deprecatad/Skeleton/Skeleton';
+import { Avatar } from '@/shared/ui/deprecatad/Avatar/ui/Avatar';
 import { ArticleBlock } from '../../model/types/article';
 import { ArticleTypeBlock } from '../../model/consts/consts';
 import { ArticleCodeBlockComponent } from '@/entities/Article/ui/ArticleCodeBlockComponent/ArticleCodeBlockComponent';
 import { ArticleImageBlockComponent } from '@/entities/Article/ui/ArticleImageBlockComponent/ArticleImageBlockComponent';
 import { ArticleTextBlockComponent } from '@/entities/Article/ui/ArticleTextBlockComponent/ArticleTextBlockComponent';
-import { HStack, VStack } from '@/shared/ui/Stack';
+import { HStack, VStack } from '@/shared/ui/deprecatad/Stack';
 
 interface ArticleDetailsProps {
     className?: string;

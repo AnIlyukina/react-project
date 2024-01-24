@@ -8,9 +8,12 @@ import { getUserAuthData } from '@/entities/User';
 import { getProfileData } from '../../model/selectors/getProfileData/getProfileData';
 import { profileActions } from '../../model/slice/editableProfileCard';
 import { updateProfileData } from '../../model/services/updateProfileData/updateProfileData';
-import { HStack } from '@/shared/ui/Stack';
-import { AppText } from '@/shared/ui/AppText/ui/AppText';
-import { AppButton, ThemeButton } from '@/shared/ui/AppButton/AppButton';
+import { HStack } from '@/shared/ui/deprecatad/Stack';
+import { AppText } from '@/shared/ui/deprecatad/AppText/ui/AppText';
+import {
+    AppButton,
+    ThemeButton,
+} from '@/shared/ui/deprecatad/AppButton/AppButton';
 
 interface EditableProfileCardHeaderProps {
     className?: string;

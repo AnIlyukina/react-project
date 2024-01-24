@@ -1,8 +1,8 @@
 import { classNames } from '@/shared/lib/classNames/classNames';
 import styles from './AvatarDropdown.module.scss';
 import { useTranslation } from 'react-i18next';
-import { Avatar } from '@/shared/ui/Avatar/ui/Avatar';
-import { Dropdown } from '@/shared/ui/Popups';
+import { Avatar } from '@/shared/ui/deprecatad/Avatar/ui/Avatar';
+import { Dropdown } from '@/shared/ui/deprecatad/Popups';
 import React, { useCallback } from 'react';
 import {
     getUserAuthData,

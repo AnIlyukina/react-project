@@ -7,7 +7,7 @@ import {
     ReducerList,
 } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { Page } from '@/widgets/Page/Page';
-import { VStack } from '@/shared/ui/Stack';
+import { VStack } from '@/shared/ui/deprecatad/Stack';
 import styles from './ArticleDetailsPage.module.scss';
 import { articleDetailsPageReducer } from '../../model/slices';
 import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';
@@ -15,7 +15,7 @@ import { ArticleRecommendationsList } from '@/features/articleRecommendationsLis
 import { ArticleDetailsComment } from '@/pages/ArticleDetailsPage/ui/ArticleDetailsComment/ArticleDetailsComment';
 import { ArticleRating } from '@/features/ArticleRating';
 import { toggleFeatures } from '@/shared/lib/features';
-import { Card } from '@/shared/ui/Card/Card';
+import { Card } from '@/shared/ui/deprecatad/Card/Card';
 
 interface ArticleDetailsPageProps {
     className?: string;

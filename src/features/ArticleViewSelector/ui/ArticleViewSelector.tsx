@@ -2,8 +2,11 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import { memo } from 'react';
 import ListIcon from '@/shared/assets/icon/list-24-24.svg?react';
 import TiledIcon from '@/shared/assets/icon/tiled-24-24.svg?react';
-import { Icon } from '@/shared/ui/Icon/Icon';
-import { AppButton, ThemeButton } from '@/shared/ui/AppButton/AppButton';
+import { Icon } from '@/shared/ui/deprecatad/Icon/Icon';
+import {
+    AppButton,
+    ThemeButton,
+} from '@/shared/ui/deprecatad/AppButton/AppButton';
 import styles from './ArticleViewSelector.module.scss';
 import { ArticleView } from '@/entities/Article';
 

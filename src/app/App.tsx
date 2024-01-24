@@ -10,9 +10,9 @@ import {
     useJsonSettingsByKey,
     userActions,
 } from '@/entities/User';
-import {PageLoader} from '@/widgets/PageLoader/PageLoader';
-import {ToggleFeatures} from '@/shared/lib/features/ToggleFeatures/ToggleFeatures';
-import {MainLayout} from '@/layout/MainLayout';
+import { PageLoader } from '@/widgets/PageLoader/PageLoader';
+import { ToggleFeatures } from '@/shared/lib/features/ToggleFeatures/ToggleFeatures';
+import { MainLayout } from '@/layout/MainLayout';
 
 const App = () => {
     const dispatch = useDispatch();
@@ -23,7 +23,7 @@ const App = () => {
     }, [dispatch]);
 
     if (!inited) {
-       return  <PageLoader/>;
+        return <PageLoader />;
     }
 
     return (
@@ -31,6 +31,17 @@ const App = () => {
             feature={'isAppRedesigned'}
             on={
                 <div className={classNames('app_redesigned', {}, [])}>
+                    <Suspense fallback="">
+                        <MainLayout
+                            header={<Navbar />}
+                            content={<AppRouter />}
+                            sidebar={<Sidebar />}
+                        />
+                    </Suspense>
+                </div>
+            }
+            off={
+                <div className={classNames('app', {}, [])}>
                     <Suspense fallback="">
                         <Navbar />
                         <div className="content-page">
@@ -40,15 +51,7 @@ const App = () => {
                     </Suspense>
                 </div>
             }
-            off={
-                <div className={classNames('app', {}, [])}>
-                    <Suspense fallback="">
-                        <MainLayout header={ <Navbar />} content={<AppRouter />} sidebar={ <Sidebar/>}/>
-                    </Suspense>
-                </div>
-            }
         />
-
     );
 };
 
