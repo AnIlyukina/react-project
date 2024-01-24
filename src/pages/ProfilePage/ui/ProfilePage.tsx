@@ -1,5 +1,5 @@
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { VStack } from '@/shared/ui/deprecatad/Stack/VStack/VStack';
+import { VStack } from '@/shared/ui/redesigned/Stack/VStack/VStack';
 import { useTranslation } from 'react-i18next';
 import { EditableProfileCard } from '@/features/EditableProfileCard';
 import { useParams } from 'react-router-dom';

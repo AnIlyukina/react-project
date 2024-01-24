@@ -8,7 +8,7 @@ import { getUserAuthData } from '@/entities/User';
 import { getProfileData } from '../../model/selectors/getProfileData/getProfileData';
 import { profileActions } from '../../model/slice/editableProfileCard';
 import { updateProfileData } from '../../model/services/updateProfileData/updateProfileData';
-import { HStack } from '@/shared/ui/deprecatad/Stack';
+import { HStack } from '@/shared/ui/redesigned/Stack';
 import { AppText } from '@/shared/ui/deprecatad/AppText/ui/AppText';
 import {
     AppButton,

@@ -11,7 +11,7 @@ import { getArticleComments } from '../../model/slices/articleDetailsCommentsSli
 import { useTranslation } from 'react-i18next';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
-import { VStack } from '@/shared/ui/deprecatad/Stack';
+import { VStack } from '@/shared/ui/redesigned/Stack';
 
 interface ArticleDetailsCommentProps {
     className?: string;

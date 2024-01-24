@@ -8,7 +8,7 @@ import {
 } from '@/shared/ui/deprecatad/AppButton/AppButton';
 import { useSelector } from 'react-redux';
 import { getArticleDetailsData } from '@/entities/Article/model/selectors/articleDetails';
-import { HStack } from '@/shared/ui/deprecatad/Stack';
+import { HStack } from '@/shared/ui/redesigned/Stack';
 import { getCanEditArticle } from '../../model/selectors/article';
 import { getRouteArticleEdit, getRouteArticles } from '@/shared/const/router';
 

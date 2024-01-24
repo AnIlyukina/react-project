@@ -16,7 +16,7 @@ import { Article, ArticleTextBlock } from '../../model/types/article';
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
 import { ArticleView } from '../../model/consts/consts';
 import { ArticleTypeBlock } from '../../model/consts/consts';
-import { AppImage } from '@/shared/ui/deprecatad/AppImage/AppImage';
+import { AppImage } from '@/shared/ui/redesigned/AppImage/AppImage';
 import { Skeleton } from '@/shared/ui/deprecatad/Skeleton/Skeleton';
 import { getRouteArticleDetails } from '@/shared/const/router';
 

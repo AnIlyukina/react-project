@@ -9,7 +9,7 @@ import {
 } from '@/shared/ui/deprecatad/AppButton/AppButton';
 import { useSelector } from 'react-redux';
 import { getUserAuthData } from '@/entities/User';
-import { HStack } from '@/shared/ui/deprecatad/Stack';
+import { HStack } from '@/shared/ui/redesigned/Stack';
 import { NotificationButton } from '@/features/NotificationButton';
 import { AvatarDropdown } from '@/features/AvatarDropdown';
 import { ToggleFeatures } from '@/shared/lib/features/ToggleFeatures/ToggleFeatures';

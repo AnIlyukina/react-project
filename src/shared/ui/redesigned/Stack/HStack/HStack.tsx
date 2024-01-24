@@ -1,11 +1,7 @@
 import { memo } from 'react';
-import { Flex, FlexProps } from '@/shared/ui/deprecatad/Stack/Flex/Flex';
+import { Flex, FlexProps } from '@/shared/ui/redesigned/Stack/Flex/Flex';
 
 type HStackProps = Omit<FlexProps, 'direction'>;
-
-/**
- * @deprecated
- */
 
 export const HStack = memo((props: HStackProps) => {
     return (

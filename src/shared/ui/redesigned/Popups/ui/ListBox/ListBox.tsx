@@ -5,7 +5,7 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import { AppButton } from '@/shared/ui/deprecatad/AppButton/AppButton';
 import { HStack } from '@/shared/ui/redesigned/Stack';
 import { DropdownDirection } from '@/shared/types/ui';
-import popupStyles from '@/shared/ui/deprecatad/Popups/styles/Popup.module.scss';
+import popupStyles from '../../styles/Popup.module.scss';
 
 export interface ListBoxItem {
     value: string;
@@ -23,10 +23,6 @@ interface ListBoxProps {
     label?: string;
 }
 
-/**
- * @deprecated
- */
-
 export function ListBox(props: ListBoxProps) {
     const {
         items,
@@ -39,7 +35,7 @@ export function ListBox(props: ListBoxProps) {
         direction = 'bottomRight',
     } = props;
 
-    const optionsClasses = [styles[direction]];
+    const optionsClasses = [styles[direction], popupStyles.menu];
 
     return (
         <HStack gap="4">

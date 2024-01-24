@@ -4,7 +4,7 @@ import { Avatar } from '@/shared/ui/deprecatad/Avatar/ui/Avatar';
 import { AppText } from '@/shared/ui/deprecatad/AppText/ui/AppText';
 import { Skeleton } from '@/shared/ui/deprecatad/Skeleton/Skeleton';
 import { AppLink } from '@/shared/ui/deprecatad/AppLink/AppLink';
-import { VStack } from '@/shared/ui/deprecatad/Stack';
+import { VStack } from '@/shared/ui/redesigned/Stack';
 import cls from './CommentCard.module.scss';
 import { Comment } from '../../model/types/comment';
 import { getRouteProfile } from '@/shared/const/router';

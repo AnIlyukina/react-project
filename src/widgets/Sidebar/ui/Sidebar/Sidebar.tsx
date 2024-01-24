@@ -11,11 +11,11 @@ import {
 } from '@/shared/ui/deprecatad/AppButton/AppButton';
 import { getSidebarItems } from '../../model/selectors/getSidebarItems';
 import { SidebarItem } from '../SidebarItem/SidebarItem';
-import { VStack } from '@/shared/ui/deprecatad/Stack/VStack/VStack';
+import { VStack } from '@/shared/ui/redesigned/Stack/VStack/VStack';
 import { ToggleFeatures } from '@/shared/lib/features/ToggleFeatures/ToggleFeatures';
 import { AppLogo } from '@/shared/ui/redesigned/AppLogo';
 import { Icon } from '@/shared/ui/redesigned/Icon/Icon';
-import ArrowIcon from '@/shared/assets/icon/arrow-bottom.svg';
+import ArrowIcon from '@/shared/assets/icon/arrow-bottom.svg?react';
 
 interface SidebarProps {
     className?: string;

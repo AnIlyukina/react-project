@@ -1,10 +1,10 @@
 import { classNames } from '@/shared/lib/classNames/classNames';
 import styles from './Avatar.module.scss';
 import { CSSProperties, useMemo } from 'react';
-import { AppImage } from '@/shared/ui/redesigned/AppImage/AppImage';
+import { AppImage } from '../../AppImage/AppImage';
 import Profile from '../../../../assets/icon/profile-20-20.svg?react';
-import { Icon } from '@/shared/ui/deprecatad/Icon/Icon';
-import { Skeleton } from '@/shared/ui/deprecatad/Skeleton/Skeleton';
+import { Icon } from '../../Icon/Icon';
+import { Skeleton } from '../../Skeleton/Skeleton';
 
 interface AvatarProps {
     className?: string;
@@ -12,10 +12,6 @@ interface AvatarProps {
     size?: number;
     alt?: string;
 }
-
-/**
- * @deprecated
- */
 
 export const Avatar = (props: AvatarProps) => {
     const { className, src, size, alt = 'аватар' } = props;

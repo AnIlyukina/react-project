@@ -1,0 +1,25 @@
+.ListBox {
+    position: relative;
+}
+
+.trigger {
+    background: none;
+    border: none;
+    outline: none;
+}
+
+.items {
+    background: var(--dark-bg-redesigned);
+    position: absolute;
+    z-index: 10000;
+    border-radius: 12px;
+    box-shadow: 4px 4px 8px var(--dark-bg-redesigned);
+}
+
+.item {
+    padding: 5px 20px;
+}
+
+.disabled {
+    opacity: .7;
+}

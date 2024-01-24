@@ -4,7 +4,7 @@ import styles from './ArticleRecommendationsList.module.scss';
 import { memo } from 'react';
 import { AppText, TextSize } from '@/shared/ui/deprecatad/AppText/ui/AppText';
 import { ArticleList } from '@/entities/Article';
-import { VStack } from '@/shared/ui/deprecatad/Stack';
+import { VStack } from '@/shared/ui/redesigned/Stack';
 import { useArticleRecommendationsList } from '../../api/articleRecommendationsApi';
 
 interface ArticleRecommendationsListProps {
