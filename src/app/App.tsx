@@ -6,9 +6,7 @@ import { Sidebar } from '@/widgets/Sidebar';
 import { Suspense, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import {
-    getUserInited,
-    useJsonSettingsByKey,
-    userActions,
+    getUserInited, initAuthData
 } from '@/entities/User';
 import { PageLoader } from '@/widgets/PageLoader/PageLoader';
 import { ToggleFeatures } from '@/shared/lib/features/ToggleFeatures/ToggleFeatures';
@@ -19,7 +17,8 @@ const App = () => {
     const inited = useSelector(getUserInited);
 
     useEffect(() => {
-        dispatch(userActions.initAuthData());
+        // @ts-ignore
+        dispatch(initAuthData());
     }, [dispatch]);
 
     if (!inited) {
